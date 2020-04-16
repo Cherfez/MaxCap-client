@@ -1,5 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
+
+import { IoIosMore } from "react-icons/io";
 
 export default function Timeslots() {
-  return <div>IM TIME!</div>;
+  const [show, setShow] = useState(false);
+
+  const showDetails = () => {
+    return (
+      <div>
+        <form>
+          <label>Extra climber(s): </label>
+          <input type="number" min="0" max="4" />
+          {/* if nr > 0 --> input field for every name */}
+          <input type="text" placeholder="Name partner" />
+        </form>
+
+        <button>Book session</button>
+      </div>
+    );
+  };
+
+  function clickHandle() {
+    setShow(!show);
+  }
+
+  return (
+    <div>
+      <h4>10:00 - 12:00</h4>
+      <p>Spots available: 2</p>
+      {show && showDetails()}
+      <div onClick={clickHandle}>
+        <IoIosMore />
+      </div>
+    </div>
+  );
 }
