@@ -4,15 +4,24 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-#homepage h1,
-#gyms h1 {
-  text-align: center;
-  color: #fff;
-}
 
 #gyms {
   background: #f3dbdb;
   background-image: url("https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
   background-repeat: no-repeat;
   background-position: center;
+}
+
+#booking {
+  background: #f3dbdb;
+  background-image: url("https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#homepage h1,
+#gyms h1,
+#booking h1 {
+  text-align: center;
+  color: #fff;
 }
