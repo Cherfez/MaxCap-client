@@ -8,7 +8,7 @@ export default function Gym(props) {
         <h3>{props.gym.name}</h3>
         <p>{props.gym.address}</p>
         <p>{props.gym.phone}</p>
-        <NavLink to={`/${props.gym.id}`}>
+        <NavLink to={`/booking/${props.gym.id}`}>
           <button>Book session</button>
         </NavLink>
       </div>
