@@ -4,13 +4,23 @@ import { IoIosMore } from "react-icons/io";
 
 export default function Timeslots() {
   const [show, setShow] = useState(false);
+  const [extra, setExtra] = useState(0);
+  // console.log("extra", extra);
 
   const showDetails = () => {
     return (
       <div>
         <form>
           <label>Extra climber(s): </label>
-          <input type="number" min="0" max="4" />
+          <input
+            type="number"
+            min="0"
+            max="4"
+            value={extra}
+            onChange={(e) => {
+              setExtra(e.target.value);
+            }}
+          />
           {/* if nr > 0 --> input field for every name */}
           <input type="text" placeholder="Name partner" />
         </form>
