@@ -54,10 +54,9 @@ export default function Timeslots() {
             }}
           />
           {inputs}
+
+          <button type="submit">Book session</button>
         </form>
-        <button type="submit" onClick={handleSubmit}>
-          Book session
-        </button>
       </div>
     );
   };
