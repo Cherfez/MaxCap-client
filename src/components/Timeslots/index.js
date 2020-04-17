@@ -6,26 +6,58 @@ export default function Timeslots() {
   const [show, setShow] = useState(false);
   const [extra, setExtra] = useState(0);
   // console.log("extra", extra);
+  const [extraInputs, setExtraInputs] = useState({}); // { 1: "name", 2: "name", ...}
+  // console.log("extraInpts", extraInputs);
+
+  const onExtraNameChange = (event) => {
+    const fieldName = event.target.name;
+    const name = event.target.value;
+    const newExtraInputs = { ...extraInputs, [fieldName]: name };
+    setExtraInputs(newExtraInputs);
+  };
 
   const showDetails = () => {
+    let inputs = [];
+    console.log("inputs", inputs);
+    const numberExtra = parseInt(extra);
+
+    if (numberExtra > 0) {
+      for (let i = 1; i < numberExtra + 1; i++) {
+        inputs.push(
+          <input
+            type="text"
+            placeholder="Name partner"
+            name={`${i}`}
+            value={extraInputs[i]}
+            onChange={(e) => onExtraNameChange(e)}
+          />
+        );
+      }
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      console.log("on submit", extraInputs);
+    }
+
     return (
       <div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <label>Extra climber(s): </label>
           <input
             type="number"
             min="0"
-            max="4"
+            max="3"
             value={extra}
             onChange={(e) => {
               setExtra(e.target.value);
             }}
           />
-          {/* if nr > 0 --> input field for every name */}
-          <input type="text" placeholder="Name partner" />
+          {inputs}
         </form>
-
-        <button>Book session</button>
+        <button type="submit" onClick={handleSubmit}>
+          Book session
+        </button>
       </div>
     );
   };
