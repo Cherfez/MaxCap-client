@@ -16,6 +16,11 @@ export default function Booking() {
   // console.log("what is id?", id);
   const [startDate, setStartDate] = useState(null);
 
+  let times;
+  if (startDate) {
+    times = <Timeslots />;
+  }
+
   return (
     <div>
       <Jumbotron id="booking">
@@ -43,7 +48,7 @@ export default function Booking() {
           placeholderText="Select a date"
         />
 
-        <Timeslots />
+        {times}
       </Container>
     </div>
   );
