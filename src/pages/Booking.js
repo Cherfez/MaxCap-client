@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 
 import Timeslots from "../components/Timeslots/index";
@@ -6,9 +6,20 @@ import Timeslots from "../components/Timeslots/index";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 
+import DatePicker from "react-datepicker";
+import { formatDistance, subDays } from "date-fns";
+import addDays from "date-fns/addDays";
+import "react-datepicker/dist/react-datepicker.css";
+
 export default function Booking() {
   const { id } = useParams();
   // console.log("what is id?", id);
+  const [startDate, setStartDate] = useState(null);
+
+  let times;
+  if (startDate) {
+    times = <Timeslots />;
+  }
 
   return (
     <div>
@@ -28,7 +39,16 @@ export default function Booking() {
           </p>
         </div>
 
-        <Timeslots />
+        <DatePicker
+          dateFormat="eeeeeee dd-MM-yyyy"
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
+          minDate={new Date()}
+          maxDate={addDays(new Date(), 7)}
+          placeholderText="Select a date"
+        />
+
+        {times}
       </Container>
     </div>
   );
