@@ -37,7 +37,10 @@ export default function Timeslots() {
 
     function handleSubmit(e) {
       e.preventDefault();
-      console.log("on submit", extraInputs);
+
+      if (extraInputs > 0) {
+        console.log("on submit", extraInputs);
+      }
     }
 
     return (
