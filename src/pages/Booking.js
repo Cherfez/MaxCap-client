@@ -16,19 +16,6 @@ export default function Booking() {
   // console.log("what is id?", id);
   const [startDate, setStartDate] = useState(null);
 
-  // () => {
-  //   const [startDate, setStartDate] = useState(null);
-  //   return (
-  //     <DatePicker
-  //       selected={startDate}
-  //       onChange={date => setStartDate(date)}
-  //       minDate={new Date()}
-  //       maxDate={addDays(new Date(), 5)}
-  //       placeholderText="Select a date between today and 5 days in the future"
-  //     />
-  //   );
-  // };
-
   return (
     <div>
       <Jumbotron id="booking">
@@ -48,6 +35,7 @@ export default function Booking() {
         </div>
 
         <DatePicker
+          dateFormat="eeeeeee dd-MM-yyyy"
           selected={startDate}
           onChange={(date) => setStartDate(date)}
           minDate={new Date()}
