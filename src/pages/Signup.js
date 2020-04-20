@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { selectToken } from "../store/user/selectors";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory, Link } from "react-router-dom";
+
+import { signUp } from "../store/user/actions";
+
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Button from "react-bootstrap/Button";
-// import { signUp } from "../../store/user/actions";
-// import { selectToken } from "../../store/user/selectors";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory, Link } from "react-router-dom";
 import { Col } from "react-bootstrap";
 
 export default function SignUp() {
@@ -16,24 +18,25 @@ export default function SignUp() {
   const [phone, setPhone] = useState("");
   const [certified, setCertified] = useState(false);
   const dispatch = useDispatch();
-  // const token = useSelector(selectToken);
+  const token = useSelector(selectToken);
   const history = useHistory();
 
-  // useEffect(() => {
-  //   if (token !== null) {
-  //     history.push("/");
-  //   }
-  // }, [token, history]);
+  useEffect(() => {
+    if (token !== null) {
+      history.push("/");
+    }
+  }, [token, history]);
 
   function submitForm(event) {
     event.preventDefault();
 
-    // dispatch(signUp(name, email, phone, password));
+    dispatch(signUp(name, email, phone, password, certified));
 
-    // setEmail("");
-    // setPassword("");
-    // setName("");
-    // setPhone("");
+    setEmail("");
+    setPassword("");
+    setName("");
+    setPhone("");
+    setCertified(false);
   }
 
   return (
