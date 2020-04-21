@@ -19,7 +19,7 @@ export default function Login() {
   const history = useHistory();
 
   useEffect(() => {
-    if (token !== null) {
+    if (token) {
       history.push("/");
     }
   }, [token, history]);

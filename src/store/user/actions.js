@@ -80,6 +80,7 @@ export const login = (email, password) => {
 };
 
 export const getUserWithStoredToken = () => {
+  console.log("hello?");
   return async (dispatch, getState) => {
     // get token from the state
     const token = selectToken(getState());
