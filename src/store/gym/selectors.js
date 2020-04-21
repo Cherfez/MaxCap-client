@@ -4,5 +4,6 @@ export function selectGyms(reduxState) {
 }
 
 export function selectGym(reduxState) {
-  return reduxState.gyms.selected;
+  // console.log("gym", reduxState.gyms.selected.gym);
+  return reduxState.gyms.selected.gym;
 }
