@@ -6,30 +6,28 @@ export default function Timeslots() {
   const [show, setShow] = useState(false);
   const [extra, setExtra] = useState(0);
   // console.log("extra", extra);
-  const [extraInputs, setExtraInputs] = useState({}); // { 1: "name", 2: "name", ...}
+  const [extraInputs, setExtraInputs] = useState([]);
   // console.log("extraInpts", extraInputs);
 
-  const onExtraNameChange = (event) => {
-    const fieldName = event.target.name;
-    const name = event.target.value;
-    const newExtraInputs = { ...extraInputs, [fieldName]: name };
+  const onExtraNameChange = (i, name) => {
+    const newExtraInputs = extraInputs.slice();
+    newExtraInputs[i] = name;
     setExtraInputs(newExtraInputs);
   };
 
   const showDetails = () => {
     let inputs = [];
-    console.log("inputs", inputs);
+    // console.log("inputs", inputs);
     const numberExtra = parseInt(extra);
 
     if (numberExtra > 0) {
-      for (let i = 1; i < numberExtra + 1; i++) {
+      for (let i = 0; i < numberExtra; i++) {
         inputs.push(
           <input
             type="text"
             placeholder="Name partner"
-            name={`${i}`}
             value={extraInputs[i]}
-            onChange={(e) => onExtraNameChange(e)}
+            onChange={(e) => onExtraNameChange(i, e.target.value)}
           />
         );
       }
@@ -38,7 +36,9 @@ export default function Timeslots() {
     function handleSubmit(e) {
       e.preventDefault();
 
-      console.log("on submit", extraInputs);
+      const finalPartners = extraInputs.slice(0, extra);
+      // console.log("extra submit", extra);
+      console.log(finalPartners);
     }
 
     return (
