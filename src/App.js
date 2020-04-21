@@ -4,15 +4,16 @@ import "./styling/mobile.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Switch, Route } from "react-router-dom";
 import { getUserWithStoredToken } from "./store/user/actions";
+import { useDispatch } from "react-redux";
 
 import Homepage from "./pages/Homepage";
 import Gyms from "./pages/Gyms";
 import SignUp from "./pages/Signup";
 import Login from "./pages/Login";
 import Booking from "./pages/Booking";
+import Profile from "./pages/Profile";
 
 import Navigation from "./components/Navigation/index";
-import { useDispatch } from "react-redux";
 
 function App() {
   const dispatch = useDispatch();
@@ -30,6 +31,7 @@ function App() {
         <Route path="/booking/:id" component={Booking} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
+        <Route path="/profile" component={Profile} />
       </Switch>
     </div>
   );

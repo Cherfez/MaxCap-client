@@ -20,12 +20,11 @@ export default function Login() {
 
   useEffect(() => {
     if (token) {
-      history.push("/");
+      history.push("/gyms");
     }
   }, [token, history]);
 
   function submitForm(event) {
-    console.log("hi");
     event.preventDefault();
 
     dispatch(login(email, password));
