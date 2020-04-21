@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { GiHamburgerMenu } from "react-icons/gi";
 import { useSelector } from "react-redux";
 import { selectToken } from "../../store/user/selectors";
 import Navbar from "react-bootstrap/Navbar";
@@ -10,9 +9,9 @@ import LoggedIn from "./LoggedIn";
 import LoggedOut from "./LoggedOut";
 
 export default function Navigation() {
-  // const token = useSelector(selectToken);
+  const token = useSelector(selectToken);
 
-  // const loginLogoutControls = token ? <LoggedIn /> : <LoggedOut />;
+  const loginLogoutControls = token ? <LoggedIn /> : <LoggedOut />;
 
   return (
     <Navbar bg="dark" variant="dark" expand="md">
@@ -23,30 +22,9 @@ export default function Navigation() {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <NavLink to="/gyms">Search gyms</NavLink>
-          <NavLink to="/login">Login</NavLink>
+          {loginLogoutControls}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-
-    // <div>
-    //   <nav id="nav">
-    //     <span className="navbar-toggle" id="js-navbar-toggle">
-    //       <GiHamburgerMenu />
-    //     </span>
-    //     <ul className="main-nav" id="js-menu">
-    //       <li>
-    //         <NavLink to="/" className="nav-links">
-    //           HOME
-    //         </NavLink>
-    //       </li>
-    //       <li>
-    //         <NavLink to="/gyms" class="nav-links">
-    //           Book session
-    //         </NavLink>
-    //       </li>
-    //       {/* <li>{loginLogoutControls}</li> */}
-    //     </ul>
-    //   </nav>
-    // </div>
   );
 }
