@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 import Timeslots from "../components/Timeslots/index";
 
@@ -11,9 +12,20 @@ import { formatDistance, subDays } from "date-fns";
 import addDays from "date-fns/addDays";
 import "react-datepicker/dist/react-datepicker.css";
 
+import { selectGym } from "../store/gym/selectors";
+import { fetchGymById } from "../store/gym/actions";
+
 export default function Booking() {
   const { id } = useParams();
   // console.log("what is id?", id);
+  const dispatch = useDispatch();
+  const gymDetails = useSelector(selectGym);
+  console.log("details?", gymDetails);
+
+  useEffect(() => {
+    dispatch(fetchGymById(id));
+  }, [dispatch, id]);
+
   const [startDate, setStartDate] = useState(null);
 
   let times;
