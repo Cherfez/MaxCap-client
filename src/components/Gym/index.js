@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 export default function Gym(props) {
   return (
     <div>
-      <div>
+      <div key={props.gym.id}>
         <h3>{props.gym.name}</h3>
         <p>{props.gym.address}</p>
         <p>{props.gym.phone}</p>

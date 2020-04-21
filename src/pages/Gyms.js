@@ -1,28 +1,38 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 
 import Gym from "../components/Gym/index";
+import { selectGyms } from "../store/gym/selectors";
+import { fetchGyms } from "../store/gym/actions";
 
-const gyms = [
-  {
-    name: "Rock Steady",
-    address: "blah",
-    phone: "29879384",
-    id: 1,
-  },
-  {
-    name: "Monk",
-    address: "blahblah",
-    phone: "29879384",
-    id: 2,
-  },
-];
+// const gyms = [
+//   {
+//     name: "Rock Steady",
+//     address: "blah",
+//     phone: "29879384",
+//     id: 1,
+//   },
+//   {
+//     name: "Monk",
+//     address: "blahblah",
+//     phone: "29879384",
+//     id: 2,
+//   },
+// ];
 
 export default function Gyms() {
   const [searchTerm, setSearchTerm] = useState("");
+  const gyms = useSelector(selectGyms);
+  console.log("gyms", gyms);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchGyms());
+  }, [dispatch]);
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
@@ -62,7 +72,7 @@ export default function Gyms() {
 
         <div>
           {results.map((gym) => (
-            <Gym gym={gym} />
+            <Gym gym={gym} key={gym.id} />
           ))}
         </div>
       </Container>
