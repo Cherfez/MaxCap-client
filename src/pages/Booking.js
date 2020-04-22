@@ -7,7 +7,7 @@ import Timeslots from "../components/Timeslots/index";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 
-import DatePicker from "react-datepicker";
+import DatePicker, { isValid, format } from "react-datepicker";
 import { formatDistance, subDays } from "date-fns";
 import addDays from "date-fns/addDays";
 import "react-datepicker/dist/react-datepicker.css";
@@ -26,15 +26,26 @@ export default function Booking() {
     dispatch(fetchGymById(id));
   }, [dispatch, id]);
 
-  const [startDate, setStartDate] = useState(null);
+  const [startDate, setStartDate] = useState("");
+  console.log(startDate);
 
   let times;
   if (startDate) {
     times = <Timeslots />;
   }
 
+  function checkDate() {
+    const selectedDay = startDate.toString().substring(0, 3);
+    // console.log("selectedDay", selectedDay);
+
+    const weekday = gymDetails.timeslots.filter((slot) => {
+      return slot.weekday === selectedDay;
+    });
+    // console.log("weekday", weekday);
+  }
+
   return (
-    <Container>
+    <div>
       {gymDetails ? (
         <div>
           <Jumbotron id="booking">
@@ -58,19 +69,20 @@ export default function Booking() {
 
             <DatePicker
               dateFormat="eeeeeee dd-MM-yyyy"
-              selected={startDate}
-              onChange={(date) => setStartDate(date)}
               minDate={new Date()}
               maxDate={addDays(new Date(), 7)}
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
               placeholderText="Select a date"
             />
 
+            <button onClick={checkDate}>Hi</button>
             {times}
           </Container>
         </div>
       ) : (
-        <h3>Nothing to show yet, Bro</h3>
+        <h3>Loading ...</h3>
       )}
-    </Container>
+    </div>
   );
 }
