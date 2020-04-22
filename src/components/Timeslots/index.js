@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+// import { selectTimeslots } from "../../store/timeslots/selectors";
+// import { fetchTimeslots } from "../../store/timeslots/actions";
 
 import { IoIosMore } from "react-icons/io";
 
 export default function Timeslots() {
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const [extra, setExtra] = useState(0);
-  // console.log("extra", extra);
   const [extraInputs, setExtraInputs] = useState([]);
-  // console.log("extraInpts", extraInputs);
+
+  // const timeslots = useSelector(selectTimeslots);
+  // console.log("timeslots", timeslots);
+
+  // useEffect(() => {
+  //   fetchTimeslots();
+  // }, [dispatch]);
 
   const onExtraNameChange = (i, name) => {
     const newExtraInputs = extraInputs.slice();
@@ -17,7 +27,6 @@ export default function Timeslots() {
 
   const showDetails = () => {
     let inputs = [];
-    // console.log("inputs", inputs);
     const numberExtra = parseInt(extra);
 
     if (numberExtra > 0) {
@@ -37,7 +46,6 @@ export default function Timeslots() {
       e.preventDefault();
 
       const finalPartners = extraInputs.slice(0, extra);
-      // console.log("extra submit", extra);
       console.log(finalPartners);
     }
 
