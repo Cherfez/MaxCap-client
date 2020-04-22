@@ -14,7 +14,7 @@ export default (state = initialState, action) => {
     case "FETCHED_GYM_DETAILS_SUCCESS":
       return {
         ...state,
-        selected: { ...action.payload },
+        selected: action.payload,
       };
 
     default:

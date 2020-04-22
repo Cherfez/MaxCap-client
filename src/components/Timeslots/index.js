@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+// import { selectTimeslots } from "../../store/timeslots/selectors";
+// import { fetchTimeslots } from "../../store/timeslots/actions";
 
 import { IoIosMore } from "react-icons/io";
 
-export default function Timeslots() {
+export default function Timeslots(props) {
+  console.log("props?", props.info);
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const [extra, setExtra] = useState(0);
-  // console.log("extra", extra);
   const [extraInputs, setExtraInputs] = useState([]);
-  // console.log("extraInpts", extraInputs);
+
+  // const timeslots = useSelector(selectTimeslots);
+  // console.log("timeslots", timeslots);
+
+  // useEffect(() => {
+  //   fetchTimeslots();
+  // }, [dispatch]);
 
   const onExtraNameChange = (i, name) => {
     const newExtraInputs = extraInputs.slice();
@@ -17,7 +28,6 @@ export default function Timeslots() {
 
   const showDetails = () => {
     let inputs = [];
-    // console.log("inputs", inputs);
     const numberExtra = parseInt(extra);
 
     if (numberExtra > 0) {
@@ -37,7 +47,6 @@ export default function Timeslots() {
       e.preventDefault();
 
       const finalPartners = extraInputs.slice(0, extra);
-      // console.log("extra submit", extra);
       console.log(finalPartners);
     }
 
@@ -68,12 +77,25 @@ export default function Timeslots() {
 
   return (
     <div>
-      <h4>10:00 - 12:00</h4>
-      <p>Spots available: 2</p>
-      {show && showDetails()}
-      <div onClick={clickHandle}>
-        <IoIosMore />
-      </div>
+      {props ? (
+        props.info.map((prop) => {
+          return (
+            <div key={prop.id}>
+              <h4>
+                {prop.startTime} - {prop.endTime}
+              </h4>
+              <p>Max Capacity: {prop.maxCap}</p>
+              <p>Spots available: {prop.maxCap - 2}</p>
+              {show && showDetails()}
+              <div onClick={clickHandle}>
+                <IoIosMore />
+              </div>
+            </div>
+          );
+        })
+      ) : (
+        <h3>Loading...</h3>
+      )}
     </div>
   );
 }
