@@ -6,7 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { IoIosMore } from "react-icons/io";
 
-export default function Timeslots() {
+export default function Timeslots(props) {
+  console.log("props?", props.info);
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const [extra, setExtra] = useState(0);
@@ -76,12 +77,25 @@ export default function Timeslots() {
 
   return (
     <div>
-      <h4>10:00 - 12:00</h4>
-      <p>Spots available: 2</p>
-      {show && showDetails()}
-      <div onClick={clickHandle}>
-        <IoIosMore />
-      </div>
+      {props ? (
+        props.info.map((prop) => {
+          return (
+            <div key={prop.id}>
+              <h4>
+                {prop.startTime} - {prop.endTime}
+              </h4>
+              <p>Max Capacity: {prop.maxCap}</p>
+              <p>Spots available: {prop.maxCap - 2}</p>
+              {show && showDetails()}
+              <div onClick={clickHandle}>
+                <IoIosMore />
+              </div>
+            </div>
+          );
+        })
+      ) : (
+        <h3>Loading...</h3>
+      )}
     </div>
   );
 }
