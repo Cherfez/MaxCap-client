@@ -39,7 +39,7 @@ export default function Booking() {
     // console.log("weekday", weekday);
 
     if (weekday) {
-      setTimes(<Timeslots info={weekday} />);
+      setTimes(<Timeslots info={weekday} gymId={id} />);
     }
   }
 

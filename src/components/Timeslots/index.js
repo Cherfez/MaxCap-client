@@ -3,7 +3,7 @@ import React from "react";
 import Timeslot from "../Timeslot/index";
 
 export default function Timeslots(props) {
-  // console.log("props?", props.info);
+  console.log("props?", props.info);
 
   return (
     <div>
