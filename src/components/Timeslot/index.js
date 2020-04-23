@@ -50,8 +50,8 @@ export default function Timeslot(props) {
 
       // console.log("dispatch", namePartner, timeslotId, gymId, userId);
       dispatch(postBookingThunk(namePartner, timeslotId, gymId));
-      setExtra(0); //reset counter
-      setShow(false); //reset collapse
+      setExtra(0);
+      setShow(false);
       setExtraInputs([]);
     }
 
