@@ -61,9 +61,6 @@ export default function Booking() {
               <p>
                 Session time: <strong>2hr</strong>
               </p>
-              {/* <p>
-                Max capacity: <strong>10 per slot</strong>
-              </p> */}
             </div>
 
             <DatePicker
