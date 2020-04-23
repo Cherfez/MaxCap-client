@@ -36,6 +36,7 @@ export default function Timeslots(props) {
           <input
             type="text"
             placeholder="Name partner"
+            key={[i]}
             value={extraInputs[i]}
             onChange={(e) => onExtraNameChange(i, e.target.value)}
           />
@@ -87,7 +88,7 @@ export default function Timeslots(props) {
               <p>Max Capacity: {prop.maxCap}</p>
               <p>Spots available: {prop.maxCap - 2}</p>
               {show && showDetails()}
-              <div onClick={clickHandle}>
+              <div onClick={clickHandle} key={prop.id}>
                 <IoIosMore />
               </div>
             </div>
