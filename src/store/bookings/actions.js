@@ -1,5 +1,11 @@
 import { apiUrl } from "../../config/constants";
 import axios from "axios";
+import {
+  appLoading,
+  appDoneLoading,
+  showMessageWithTimeout,
+  setMessage,
+} from "../appState/actions";
 
 export const fetchBookingsSuccess = (bookings) => ({
   type: "FETCH_BOOKINGS_SUCCESS",
@@ -22,23 +28,36 @@ export const fetchBookings = () => {
 
 export const postBookingThunk = (namePartner, timeslotId, gymId) => {
   return async (dispatch, getState) => {
-    const state = getState();
-    const token = state.user.token;
-    const response = await axios.post(
-      `${apiUrl}/bookings`,
-      {
-        namePartner: namePartner,
-        timeslotId: timeslotId,
-        gymId: gymId,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
+    dispatch(appLoading());
+    try {
+      const state = getState();
+      const token = state.user.token;
+      const response = await axios.post(
+        `${apiUrl}/bookings`,
+        {
+          namePartner: namePartner,
+          timeslotId: timeslotId,
+          gymId: gymId,
         },
-      }
-    );
-    // console.log("RESPONSE", response.data.booking);
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      // console.log("RESPONSE", response.data.booking);
 
-    dispatch(postBookingSuccess(response.data.booking));
+      dispatch(postBookingSuccess(response.data.booking));
+      dispatch(showMessageWithTimeout("success", true, "Booking made!", 6000));
+      dispatch(appDoneLoading());
+    } catch (error) {
+      if (error.response) {
+        console.log(error.response.data.message);
+        dispatch(setMessage("danger", true, error.response.data.message));
+      } else {
+        console.log(error.message);
+        dispatch(setMessage("danger", true, error.message));
+      }
+    }
   };
 };
