@@ -37,7 +37,7 @@ export const postBookingThunk = (namePartner, timeslotId, gymId) => {
         },
       }
     );
-    console.log("RESPONSE", response.data.booking);
+    // console.log("RESPONSE", response.data.booking);
 
     dispatch(postBookingSuccess(response.data.booking));
   };
