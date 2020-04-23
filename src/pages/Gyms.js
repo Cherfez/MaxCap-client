@@ -9,25 +9,10 @@ import Gym from "../components/Gym/index";
 import { selectGyms } from "../store/gym/selectors";
 import { fetchGyms } from "../store/gym/actions";
 
-// const gyms = [
-//   {
-//     name: "Rock Steady",
-//     address: "blah",
-//     phone: "29879384",
-//     id: 1,
-//   },
-//   {
-//     name: "Monk",
-//     address: "blahblah",
-//     phone: "29879384",
-//     id: 2,
-//   },
-// ];
-
 export default function Gyms() {
   const [searchTerm, setSearchTerm] = useState("");
   const gyms = useSelector(selectGyms);
-  console.log("gyms", gyms);
+  // console.log("gyms", gyms);
 
   const dispatch = useDispatch();
   useEffect(() => {

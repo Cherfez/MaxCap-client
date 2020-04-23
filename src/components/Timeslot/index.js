@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { postBookingThunk } from "../../store/bookings/actions";
 
@@ -41,7 +40,7 @@ export default function Timeslot(props) {
       e.preventDefault();
 
       const finalPartners = extraInputs.slice(0, extra);
-      console.log(finalPartners);
+      // console.log(finalPartners);
 
       const namePartner = finalPartners;
       //timeslotId is not the same as the actual id in the table!
