@@ -14,6 +14,7 @@ import Booking from "./pages/Booking";
 import Profile from "./pages/Profile";
 
 import Navigation from "./components/Navigation/index";
+import MessageBox from "./components/MessageBox";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ function App() {
   return (
     <div className="App">
       <Navigation />
+      <MessageBox />
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route path="/gyms" component={Gyms} />

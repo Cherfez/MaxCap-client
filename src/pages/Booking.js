@@ -68,7 +68,10 @@ export default function Booking() {
               minDate={new Date()}
               maxDate={addDays(new Date(), 7)}
               selected={startDate}
-              onChange={(date) => setStartDate(date)}
+              onChange={(date) => {
+                setStartDate(date);
+                setTimes(false);
+              }}
               placeholderText="Select a date"
             />
 
