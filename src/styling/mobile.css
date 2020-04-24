@@ -63,7 +63,8 @@
 
 #homepage .container,
 #gyms .container,
-#booking .container {
+#booking .container,
+#profile .container {
   padding: 0 1rem;
   text-align: center;
 }
@@ -125,6 +126,13 @@
 #booking .container .timeslot button {
   display: block;
   margin: 1rem auto;
+}
+
+#profile .container .userBooking {
+  border: black solid 1px;
+  padding: 1rem 3rem;
+  margin: 1rem;
+  text-align: start;
 }
 
 .navbar-collapse a,

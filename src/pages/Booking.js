@@ -47,7 +47,7 @@ export default function Booking() {
     <div>
       {gymDetails ? (
         <div id="booking">
-          <Jumbotron>
+          <Jumbotron fluid>
             <h1>{gymDetails.name}</h1>
           </Jumbotron>
           <Container>
