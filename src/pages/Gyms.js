@@ -52,7 +52,6 @@ export default function Gyms() {
             value={searchTerm}
             onChange={handleChange}
           />
-          <button>Search</button>
         </Form>
 
         <div>

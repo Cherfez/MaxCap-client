@@ -61,15 +61,21 @@
   color: #fff;
 }
 
-#homepage .container {
+#homepage .container,
+#gyms .container,
+#booking .container {
   padding: 0 1rem;
   text-align: center;
 }
-#homepage .container p {
+#homepage .container p,
+#gyms .container p,
+#booking .container p {
   line-height: 1.75rem;
 }
-#homepage .container button {
-  padding: 0.75rem;
+#homepage .container button,
+#gyms .container button,
+#booking .container button {
+  padding: 0.4rem 0.75rem;
   margin-bottom: 1rem;
   text-align: center;
   color: #fff;
@@ -77,6 +83,48 @@
   box-shadow: 0 0 20px #eee;
   border-radius: 10px;
   cursor: pointer;
+}
+
+#gyms .container .form-inline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#gyms .container .form-inline input {
+  width: 60%;
+  margin: 1.3rem;
+}
+
+#gyms .container .gym,
+#booking .container .timeslot {
+  border: black solid 1px;
+  margin: 1rem 2rem;
+}
+#gyms .container .gym h3 {
+  padding: 1rem;
+}
+
+#booking .container .react-datepicker-wrapper {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+#booking .container .timeslot {
+  padding: 1rem;
+}
+#booking .container .timeslot .extraClimbers {
+  display: block;
+  margin: 1rem auto;
+}
+#booking .container .timeslot .extraBtn {
+  background-color: #343a4036;
+  color: #343a40;
+  font-size: 1rem;
+}
+#booking .container .timeslot button {
+  display: block;
+  margin: 1rem auto;
 }
 
 .navbar-collapse a,
