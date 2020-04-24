@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 export default function Homepage() {
   return (
-    <div>
-      <Jumbotron id="homepage">
+    <div id="homepage">
+      <Jumbotron>
         <h1>MaxCap.</h1>
       </Jumbotron>
       <Container>

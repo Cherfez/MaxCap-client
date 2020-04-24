@@ -31,6 +31,7 @@ export default function Timeslot(props) {
             key={[i]}
             value={extraInputs[i]}
             onChange={(e) => onExtraNameChange(i, e.target.value)}
+            className="extraClimbers"
           />
         );
       }
@@ -80,14 +81,14 @@ export default function Timeslot(props) {
   }
 
   return (
-    <div key={props.info.id}>
+    <div key={props.info.id} className="timeslot">
       <h4>
         {props.info.startTime} - {props.info.endTime}
       </h4>
       <p>Max Capacity: {props.info.maxCap}</p>
       <p>Spots available: {props.info.maxCap - 2}</p>
       {show && showDetails()}
-      <div onClick={clickHandle} key={props.info.id}>
+      <div onClick={clickHandle} key={props.info.id} className="extraBtn">
         <IoIosMore />
       </div>
     </div>

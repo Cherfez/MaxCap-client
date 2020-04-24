@@ -34,8 +34,8 @@ export default function Login() {
   }
 
   return (
-    <div>
-      <Jumbotron id="login">
+    <div id="login">
+      <Jumbotron>
         <h1>Login</h1>
       </Jumbotron>
 

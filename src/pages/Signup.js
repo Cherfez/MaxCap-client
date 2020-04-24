@@ -40,8 +40,8 @@ export default function SignUp() {
   }
 
   return (
-    <div>
-      <Jumbotron id="signup">
+    <div id="signup">
+      <Jumbotron>
         <h1>Singup</h1>
       </Jumbotron>
 
