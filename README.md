@@ -2,7 +2,10 @@
 
 A booking app for climbing gyms during the COVID-19 period. This is the client code.
 
----
+MaxCap. will let climbers make a booking to a specific gym. The gym can set different timeslots for each day. Per timeslot there can be a maximum capacity set, so that the amount of climbers per session is in line with the set regulations during the COVID-19 period.
+When a climber has booked a session they will recieve an email with the confirmation. The made bookings can be re-visited on the profile of the logged in user. Here is it also possible to delete a specific timeslot.
+
+END PRODUCT OR CURRENTLY?!
 
 ## Getting Started
 
@@ -31,3 +34,6 @@ For the app to function properly, you need to have the server running. Please vi
 ## Acknowledgments
 
 Hat tip to all the Codaisseur teachers and other staff at Codaisseur!
+
+Project status
+If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
