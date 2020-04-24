@@ -1,8 +1,8 @@
 # MaxCap.
 
-A booking app for climbing gyms during the COVID-19 period. This is the client code.
+A booking app for climbing gyms during the COVID-19 period. This app will help manage the max capacity problem climbing gyms may face during the current regulations.
 
----
+This is the client code. For the server code, see [https://github.com/Cherfez/maxcap-server](https://github.com/Cherfez/maxcap-server)
 
 ## Getting Started
 
@@ -31,3 +31,23 @@ For the app to function properly, you need to have the server running. Please vi
 ## Acknowledgments
 
 Hat tip to all the Codaisseur teachers and other staff at Codaisseur!
+
+## Project status
+
+MaxCap. is currently still being improved. The live version can be seen at: <br/>
+LINK TO DEPLOY <br/>
+Features to come (not in this order) :
+
+- Confirmation email after booking
+- Component rendered after made booking
+- Delete made booking
+- Update user profile
+- Good display of times and numbers
+- Dynamic 'spots available' count
+- Only 1 booking a day
+- On booking change integer to actual info
+- url not correct (gyms/gymId/booking/bookingID) (for example)
+
+- Login for gyms
+- Update gym info, openingtimes, maxcap, timeslots
+-
