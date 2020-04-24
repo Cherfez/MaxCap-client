@@ -30,8 +30,8 @@ export default function Gyms() {
       );
 
   return (
-    <div>
-      <Jumbotron id="gyms">
+    <div id="gyms">
+      <Jumbotron>
         <h1>Bookings</h1>
       </Jumbotron>
       <Container>

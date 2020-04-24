@@ -14,12 +14,8 @@ export default function LoggedIn() {
   return (
     <>
       <p style={{ padding: ".5rem 1rem" }}>Hi, {user.name}</p>
-      <Button variant="success" onClick={() => history.push("/profile")}>
-        Profile
-      </Button>
-      <Button variant="success" onClick={() => dispatch(logOut())}>
-        Logout
-      </Button>
+      <Button onClick={() => history.push("/profile")}>Profile</Button>
+      <Button onClick={() => dispatch(logOut())}>Logout</Button>
     </>
   );
 }
