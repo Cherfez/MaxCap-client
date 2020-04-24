@@ -31,7 +31,7 @@ export default function Gyms() {
 
   return (
     <div id="gyms">
-      <Jumbotron>
+      <Jumbotron fluid>
         <h1>Bookings</h1>
       </Jumbotron>
       <Container>

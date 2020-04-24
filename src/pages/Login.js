@@ -35,7 +35,7 @@ export default function Login() {
 
   return (
     <div id="login">
-      <Jumbotron>
+      <Jumbotron fluid>
         <h1>Login</h1>
       </Jumbotron>
 

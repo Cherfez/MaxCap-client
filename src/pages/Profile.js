@@ -9,12 +9,12 @@ export default function Profile() {
   const user = useSelector(selectUser);
   console.log("user", user);
   return (
-    <div>
-      <Jumbotron id="profile">
+    <div id="profile">
+      <Jumbotron fluid>
         <h1>Welcome, {user.name}</h1>
       </Jumbotron>
       <Container>
-        <div>
+        <div className="userInfo">
           <p>Name: {user.name}</p>
           <p>Email: {user.email}</p>
           <p>Phonenr: {user.phone}</p>
@@ -26,12 +26,23 @@ export default function Profile() {
           {user.bookings ? (
             user.bookings.map((booking) => {
               return (
-                <div>
-                  <p>Gym: {booking.gymId} </p>
-                  <p>Date: </p>
-                  <p>Timeslot: </p>
-                  <p>Climbing partners: {booking.namePartner.length}</p>
-                  <p>Names: {booking.namePartner.join(", ")}</p>
+                <div className="userBooking">
+                  <p>
+                    <strong>Gym:</strong> {booking.gymId}{" "}
+                  </p>
+                  <p>
+                    <strong>Date:</strong>{" "}
+                  </p>
+                  <p>
+                    <strong>Timeslot:</strong> {booking.timeslotId}
+                  </p>
+                  <p>
+                    <strong>Climbing partner(s):</strong>{" "}
+                    {booking.namePartner.length}
+                  </p>
+                  <p>
+                    <strong>Names:</strong> {booking.namePartner.join(", ")}
+                  </p>
                 </div>
               );
             })

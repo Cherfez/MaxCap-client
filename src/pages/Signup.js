@@ -41,7 +41,7 @@ export default function SignUp() {
 
   return (
     <div id="signup">
-      <Jumbotron>
+      <Jumbotron fluid>
         <h1>Singup</h1>
       </Jumbotron>
 
