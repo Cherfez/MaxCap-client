@@ -6,7 +6,7 @@ import { postBookingThunk } from "../../store/bookings/actions";
 import { IoIosMore } from "react-icons/io";
 
 export default function Timeslot(props) {
-  console.log("prop timeslot", props);
+  // console.log("prop timeslot", props);
   const [show, setShow] = useState(false);
   const [extra, setExtra] = useState(0);
   const [extraInputs, setExtraInputs] = useState([]);
