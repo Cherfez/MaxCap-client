@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectUser } from "../store/user/selectors";
+import { getUserWithStoredToken } from "../store/user/actions";
 
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 
 export default function Profile() {
   const user = useSelector(selectUser);
-  console.log("user", user);
+  // console.log("user", user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUserWithStoredToken());
+  }, [dispatch]);
+
   return (
     <div id="profile">
       <Jumbotron fluid>
