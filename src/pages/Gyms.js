@@ -30,8 +30,8 @@ export default function Gyms() {
       );
 
   return (
-    <div>
-      <Jumbotron id="gyms">
+    <div id="gyms">
+      <Jumbotron>
         <h1>Bookings</h1>
       </Jumbotron>
       <Container>
@@ -52,7 +52,6 @@ export default function Gyms() {
             value={searchTerm}
             onChange={handleChange}
           />
-          <button>Search</button>
         </Form>
 
         <div>

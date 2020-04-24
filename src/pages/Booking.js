@@ -46,8 +46,8 @@ export default function Booking() {
   return (
     <div>
       {gymDetails ? (
-        <div>
-          <Jumbotron id="booking">
+        <div id="booking">
+          <Jumbotron>
             <h1>{gymDetails.name}</h1>
           </Jumbotron>
           <Container>

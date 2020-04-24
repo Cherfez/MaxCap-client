@@ -10,7 +10,7 @@ export default function Profile() {
   console.log("user", user);
   return (
     <div>
-      <Jumbotron>
+      <Jumbotron id="profile">
         <h1>Welcome, {user.name}</h1>
       </Jumbotron>
       <Container>
