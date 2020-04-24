@@ -23,7 +23,7 @@ export default function Profile() {
 
         <div>
           <h2>Bookings</h2>
-          {/* {user.bookings.map((booking) => {
+          {user.bookings.map((booking) => {
             return (
               <div>
                 <p>Gym: {booking.gymId} </p>
@@ -33,7 +33,7 @@ export default function Profile() {
                 <p>Names: {booking.namePartner.join(", ")}</p>
               </div>
             );
-          })} */}
+          })}
         </div>
       </Container>
     </div>
