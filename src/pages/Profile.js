@@ -23,7 +23,17 @@ export default function Profile() {
 
         <div>
           <h2>Bookings</h2>
-          <div></div>
+          {user.bookings.map((booking) => {
+            return (
+              <div>
+                <p>Gym: {booking.gymId} </p>
+                <p>Date: </p>
+                <p>Timeslot: </p>
+                <p>Climbing partners: {booking.namePartner.length}</p>
+                <p>Names: {booking.namePartner.join(", ")}</p>
+              </div>
+            );
+          })}
         </div>
       </Container>
     </div>
