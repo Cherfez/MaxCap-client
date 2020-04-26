@@ -19,7 +19,7 @@ export default function Booking() {
   // console.log("what is id?", id);
   const dispatch = useDispatch();
   const gymDetails = useSelector(selectGym);
-  // console.log("details?", gymDetails);
+  console.log("details?", gymDetails);
 
   useEffect(() => {
     dispatch(fetchGymById(id));
@@ -55,7 +55,8 @@ export default function Booking() {
               <p>
                 Openingtimes:{" "}
                 <strong>
-                  {gymDetails.openHrs} - {gymDetails.closeHrs} hr
+                  {parseFloat(gymDetails.openHrs).toFixed(2)} -{" "}
+                  {parseFloat(gymDetails.closeHrs).toFixed(2)} hr
                 </strong>
               </p>
               <p>
