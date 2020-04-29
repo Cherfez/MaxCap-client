@@ -1,16 +1,24 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 import { postBookingThunk } from "../../store/bookings/actions";
+import { selectBookingSuccess } from "../../store/bookings/selectors";
 
 import { IoIosMore } from "react-icons/io";
 
 export default function Timeslot(props) {
-  console.log("prop timeslot", props);
+  // console.log("prop timeslot", props);
   const [show, setShow] = useState(false);
   const [extra, setExtra] = useState(0);
   const [extraInputs, setExtraInputs] = useState([]);
   const dispatch = useDispatch();
+  const book = useSelector(selectBookingSuccess);
+  // console.log("book", book);
+
+  if (book) {
+    return <Redirect to="/gyms/:id/booking/:bookingId" />;
+  }
 
   const onExtraNameChange = (i, name) => {
     const newExtraInputs = extraInputs.slice();

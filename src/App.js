@@ -12,6 +12,7 @@ import SignUp from "./pages/Signup";
 import Login from "./pages/Login";
 import Booking from "./pages/Booking";
 import Profile from "./pages/Profile";
+import Confirm from "./pages/Confirm";
 
 import Navigation from "./components/Navigation/index";
 import MessageBox from "./components/MessageBox";
@@ -29,8 +30,10 @@ function App() {
       <MessageBox />
       <Switch>
         <Route exact path="/" component={Homepage} />
-        <Route path="/gyms" component={Gyms} />
-        <Route path="/booking/:id" component={Booking} />
+        <Route exact path="/gyms" component={Gyms} />
+        <Route exact path="/gyms/:id/booking" component={Booking} />
+        {/* <Route path="/booking/:id" component={Booking} /> */}
+        <Route path="/gyms/:id/booking/:bookingId" component={Confirm} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
         <Route path="/profile" component={Profile} />

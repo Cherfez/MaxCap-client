@@ -22,7 +22,7 @@ export const fetchGyms = () => {
 
 export const fetchGymById = (gymId) => {
   return async (dispatch) => {
-    const response = await axios.get(`${apiUrl}/gyms/${gymId}`);
+    const response = await axios.get(`${apiUrl}/gyms/${gymId}/booking`);
 
     dispatch(fetchGymSuccess(response.data));
   };
