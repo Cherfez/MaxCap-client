@@ -1,7 +1,11 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+
 import { selectUser } from "../store/user/selectors";
 import { getUserWithStoredToken } from "../store/user/actions";
+
+// import { selectBookings } from "../store/bookings/selectors";
+// import { fetchAllBookings } from "../store/bookings/actions";
 
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
@@ -14,6 +18,13 @@ export default function Profile() {
   useEffect(() => {
     dispatch(getUserWithStoredToken());
   }, [dispatch]);
+
+  // const bookings = useSelector(selectBookings);
+  // console.log("bookings", bookings);
+
+  // useEffect(() => {
+  //   dispatch(fetchAllBookings());
+  // }, [dispatch]);
 
   return (
     <div id="profile">
