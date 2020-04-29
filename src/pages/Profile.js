@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+
 import { selectUser } from "../store/user/selectors";
+// import { selectBookings } from "../store/bookings/selectors";
+// import { fetchAllBookings } from "../store/bookings/actions";
 
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
@@ -8,6 +11,14 @@ import Container from "react-bootstrap/Container";
 export default function Profile() {
   const user = useSelector(selectUser);
   console.log("user", user);
+  // const bookings = useSelector(selectBookings);
+  // console.log("bookings", bookings);
+  const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(fetchAllBookings());
+  // }, [dispatch]);
+
   return (
     <div id="profile">
       <Jumbotron fluid>

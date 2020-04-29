@@ -12,6 +12,11 @@ export const fetchBookingsSuccess = (bookings) => ({
   payload: bookings,
 });
 
+// export const fetchAllBookingsSuccess = (allBookings) => ({
+//   type: "FETCH_ALL_BOOKINGS_SUCCESS",
+//   payload: allBookings,
+// });
+
 export const postBookingSuccess = (booking) => ({
   type: "POST_BOOKING_SUCCESS",
   payload: booking,
@@ -25,6 +30,15 @@ export const fetchBookings = () => {
     dispatch(fetchBookingsSuccess(response.data));
   };
 };
+
+// export const fetchAllBookings = () => {
+//   return async (dispatch) => {
+//     const response = await axios.get(`${apiUrl}/bookings/all`);
+//     // console.log("RESPONSE", response);
+
+//     dispatch(fetchAllBookingsSuccess(response.data));
+//   };
+// };
 
 export const postBookingThunk = (namePartner, timeslotId, gymId) => {
   return async (dispatch, getState) => {
