@@ -40,7 +40,7 @@ export const fetchBookings = () => {
 //   };
 // };
 
-export const postBookingThunk = (namePartner, timeslotId, gymId) => {
+export const postBookingThunk = (namePartner, timeslotId, gymId, history) => {
   return async (dispatch, getState) => {
     dispatch(appLoading());
     try {
@@ -62,6 +62,7 @@ export const postBookingThunk = (namePartner, timeslotId, gymId) => {
       // console.log("RESPONSE", response.data.booking);
 
       dispatch(postBookingSuccess(response.data.booking));
+      history.push(`/gyms/${gymId}/booking/${response.data.booking.id}`);
       dispatch(showMessageWithTimeout("success", true, "Booking made!", 6000));
       dispatch(appDoneLoading());
     } catch (error) {
