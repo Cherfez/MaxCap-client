@@ -3,16 +3,15 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import Timeslots from "../components/Timeslots/index";
-
-import Jumbotron from "react-bootstrap/Jumbotron";
-import Container from "react-bootstrap/Container";
+import { selectGym } from "../store/gym/selectors";
+import { fetchGymById } from "../store/gym/actions";
 
 import DatePicker from "react-datepicker";
 import addDays from "date-fns/addDays";
 import "react-datepicker/dist/react-datepicker.css";
 
-import { selectGym } from "../store/gym/selectors";
-import { fetchGymById } from "../store/gym/actions";
+import Jumbotron from "react-bootstrap/Jumbotron";
+import Container from "react-bootstrap/Container";
 
 export default function Booking() {
   const { id } = useParams();

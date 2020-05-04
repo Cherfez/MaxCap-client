@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectMessage } from "../../store/appState/selector";
-import { Alert } from "react-bootstrap";
 import { clearMessage } from "../../store/appState/actions";
+import { Alert } from "react-bootstrap";
 
 export default function MessageBox() {
   const message = useSelector(selectMessage);

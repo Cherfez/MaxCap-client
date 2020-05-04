@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Jumbotron from "react-bootstrap/Jumbotron";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import FormControl from "react-bootstrap/FormControl";
 
 import Gym from "../components/Gym/index";
 import { selectGyms } from "../store/gym/selectors";
 import { fetchGyms } from "../store/gym/actions";
+
+import Jumbotron from "react-bootstrap/Jumbotron";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import FormControl from "react-bootstrap/FormControl";
 
 export default function Gyms() {
   const [searchTerm, setSearchTerm] = useState("");
