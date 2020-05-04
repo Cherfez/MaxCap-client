@@ -8,9 +8,13 @@ export default function Timeslots(props) {
   return (
     <div>
       {props ? (
-        props.info.map((prop) => {
-          return <Timeslot info={prop} />;
-        })
+        props.info <= 0 ? (
+          <h3>No timeslots</h3>
+        ) : (
+          props.info.map((prop) => {
+            return <Timeslot info={prop} key={prop.id} />;
+          })
+        )
       ) : (
         <h3>Loading...</h3>
       )}
