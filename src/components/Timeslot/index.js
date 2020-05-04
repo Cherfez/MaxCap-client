@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import { postBookingThunk } from "../../store/bookings/actions";
@@ -8,6 +8,7 @@ import { IoIosMore } from "react-icons/io";
 
 export default function Timeslot(props) {
   // console.log("prop timeslot", props);
+  const { id, gymId, startTime, endTime, maxCap } = props.info;
   const [show, setShow] = useState(false);
   const [extra, setExtra] = useState(0);
   const [extraInputs, setExtraInputs] = useState([]);
@@ -47,11 +48,9 @@ export default function Timeslot(props) {
       // console.log(finalPartners);
 
       const namePartner = finalPartners;
-      //timeslotId is not the same as the actual id in the table!
-      const timeslotId = props.info.id;
-      const gymId = props.info.gymId;
+      const timeslotId = id;
 
-      // console.log("dispatch", namePartner, timeslotId, gymId, userId);
+      // console.log("dispatch", namePartner, timeslotId, gymId);
       dispatch(postBookingThunk(namePartner, timeslotId, gymId, history));
       setExtra(0);
       setShow(false);
@@ -79,20 +78,15 @@ export default function Timeslot(props) {
     );
   };
 
-  function clickHandle() {
-    setShow(!show);
-  }
-
   return (
-    <div key={props.info.id} className="timeslot">
+    <div key={id} className="timeslot">
       <h4>
-        {parseFloat(props.info.startTime).toFixed(2)} -{" "}
-        {parseFloat(props.info.endTime).toFixed(2)}
+        {parseFloat(startTime).toFixed(2)} - {parseFloat(endTime).toFixed(2)}
       </h4>
-      <p>Max Capacity: {props.info.maxCap}</p>
-      <p>Spots available: {props.info.maxCap - 2}</p>
+      <p>Max Capacity: {maxCap}</p>
+      <p>Spots available: {maxCap - 2}</p>
       {show && showDetails()}
-      <div onClick={clickHandle} key={props.info.id} className="extraBtn">
+      <div onClick={() => setShow(!show)} key={id} className="extraBtn">
         <IoIosMore />
       </div>
     </div>
