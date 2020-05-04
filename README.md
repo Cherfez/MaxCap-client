@@ -2,12 +2,7 @@
 
 A booking app for climbing gyms during the COVID-19 period. This app will help manage the max capacity problem climbing gyms may face during the current regulations.
 
-This is the client code. For the server code, see [https://github.com/Cherfez/maxcap-server](https://github.com/Cherfez/maxcap-server)
-
-## Getting Started
-
-`npm start` runs the app in the development mode. <br/>
-If the app isn't opened on `npm start` open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This is the code for the client side. For the server side code, see [https://github.com/Cherfez/maxcap-server](https://github.com/Cherfez/maxcap-server)
 
 ## Prerequisites
 
@@ -15,11 +10,26 @@ This app is build on different libraries. The commant `npm install` will install
 
 ## Installing
 
-cd into the correct folder and run `npm install`
+You can clone or dowload this repo. <br/><br/>
+
+1. Create a new project based on this template using the Use this template button <br/>
+2. Clone the app <br/>
+   `git clone git@github.com:YOUR_GITHUB_NAME/YOUR_PROJECT_NAME.git` <br/>
+3. cd into your project <br/>
+   `cd YOUR_PROJECT_NAME` <br/>
+4. install dependencies <br/>
+   `npm install` <br/>
+5. Start development server with npm start <br/>
+   `npm run start`
+
+## Getting Started
+
+`npm start` runs the app in the development mode. <br/>
+If the app isn't automatically opened on `npm start` open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Deployment
 
-For the app to function properly, you need to have the server running. Please visit [https://github.com/Cherfez/maxcap-server](https://github.com/Cherfez/maxcap-server) to see the server-side of my MacCap. project.
+For the app to function properly, you need to have the server running. Please visit [https://github.com/Cherfez/maxcap-server](https://github.com/Cherfez/maxcap-server) to see the server-side of my MaxCap. project.
 
 ## Built With
 
@@ -35,19 +45,4 @@ Hat tip to all the Codaisseur teachers and other staff at Codaisseur!
 ## Project status
 
 MaxCap. is currently still being improved. The live version can be seen at: <br/>
-LINK TO DEPLOY <br/>
-Features to come (not in this order) :
-
-- Confirmation email after booking
-- Component rendered after made booking
-- Delete made booking
-- Update user profile
-- Good display of times and numbers
-- Dynamic 'spots available' count
-- Only 1 booking a day
-- On booking change integer to actual info
-- url not correct (gyms/gymId/booking/bookingID) (for example)
-
-- Login for gyms
-- Update gym info, openingtimes, maxcap, timeslots
--
+LINK TO DEPLOY WILL SOON BE ONLINE!<br/>
