@@ -4,27 +4,17 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectUser } from "../store/user/selectors";
 import { getUserWithStoredToken } from "../store/user/actions";
 
-// import { selectBookings } from "../store/bookings/selectors";
-// import { fetchAllBookings } from "../store/bookings/actions";
-
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 
 export default function Profile() {
   const user = useSelector(selectUser);
-  // console.log("user", user);
+  console.log("user", user);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getUserWithStoredToken());
   }, [dispatch]);
-
-  // const bookings = useSelector(selectBookings);
-  // console.log("bookings", bookings);
-
-  // useEffect(() => {
-  //   dispatch(fetchAllBookings());
-  // }, [dispatch]);
 
   return (
     <div id="profile">
@@ -44,15 +34,18 @@ export default function Profile() {
           {user.bookings ? (
             user.bookings.map((booking) => {
               return (
-                <div className="userBooking">
+                <div className="userBooking" key={booking.id}>
                   <p>
-                    <strong>Gym:</strong> {booking.gymId}{" "}
+                    <strong>Gym:</strong> {booking.gym.name}{" "}
                   </p>
                   <p>
-                    <strong>Date:</strong>{" "}
+                    <strong>Date: </strong>
+                    {booking.pickedDate}{" "}
                   </p>
                   <p>
-                    <strong>Timeslot:</strong> {booking.timeslotId}
+                    <strong>Timeslot:</strong>{" "}
+                    {parseFloat(booking.timeslot.startTime).toFixed(2)} -{" "}
+                    {parseFloat(booking.timeslot.endTime).toFixed(2)} hr
                   </p>
                   <p>
                     <strong>Climbing partner(s):</strong>{" "}

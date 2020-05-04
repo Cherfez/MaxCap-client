@@ -24,10 +24,20 @@ export const postBookingSuccess = (booking) => ({
 
 export const fetchBookings = () => {
   return async (dispatch) => {
-    const response = await axios.get(`${apiUrl}/bookings`);
-    // console.log("RESPONSE", response);
+    try {
+      const response = await axios.get(`${apiUrl}/bookings`);
+      console.log("RESPONSE", response);
 
-    dispatch(fetchBookingsSuccess(response.data));
+      dispatch(fetchBookingsSuccess(response.data));
+    } catch (error) {
+      if (error.response) {
+        console.log(error.response.data.message);
+        dispatch(setMessage("danger", true, error.response.data.message));
+      } else {
+        console.log(error.message);
+        dispatch(setMessage("danger", true, error.message));
+      }
+    }
   };
 };
 
@@ -40,7 +50,13 @@ export const fetchBookings = () => {
 //   };
 // };
 
-export const postBookingThunk = (namePartner, timeslotId, gymId, history) => {
+export const postBookingThunk = (
+  namePartner,
+  timeslotId,
+  gymId,
+  pickedDate,
+  history
+) => {
   return async (dispatch, getState) => {
     dispatch(appLoading());
     try {
@@ -52,6 +68,7 @@ export const postBookingThunk = (namePartner, timeslotId, gymId, history) => {
           namePartner: namePartner,
           timeslotId: timeslotId,
           gymId: gymId,
+          pickedDate: pickedDate,
         },
         {
           headers: {

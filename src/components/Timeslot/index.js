@@ -49,9 +49,13 @@ export default function Timeslot(props) {
 
       const namePartner = finalPartners;
       const timeslotId = id;
+      const pickedDate = props.date;
+      // console.log("pickedDate", pickedDate);
 
       // console.log("dispatch", namePartner, timeslotId, gymId);
-      dispatch(postBookingThunk(namePartner, timeslotId, gymId, history));
+      dispatch(
+        postBookingThunk(namePartner, timeslotId, gymId, pickedDate, history)
+      );
       setExtra(0);
       setShow(false);
       setExtraInputs([]);

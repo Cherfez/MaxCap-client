@@ -32,13 +32,16 @@ export default function Booking() {
     const selectedDay = startDate.toString().substring(0, 3);
     // console.log("selectedDay", selectedDay);
 
+    const selectedDate = startDate.toString().substring(4, 15);
+    // console.log("selectedDate", selectedDate);
+
     const weekday = gymDetails.timeslots.filter((slot) => {
       return slot.weekday === selectedDay;
     });
     // console.log("weekday", weekday);
 
     if (weekday) {
-      setTimes(<Timeslots info={weekday} gymId={id} />);
+      setTimes(<Timeslots info={weekday} date={selectedDate} gymId={id} />);
     }
   }
 
