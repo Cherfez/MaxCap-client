@@ -26,7 +26,7 @@ export default function Timeslot(props) {
     let inputs = [];
     const numberExtra = parseInt(extra);
 
-    if (numberExtra > 0) {
+    if (numberExtra > 0 && numberExtra <= props.spotsLeft - 1) {
       for (let i = 0; i < numberExtra; i++) {
         inputs.push(
           <input
@@ -39,6 +39,26 @@ export default function Timeslot(props) {
           />
         );
       }
+    }
+
+    let extraClimbers;
+    if (props.spotsLeft <= 1) {
+      extraClimbers = <div></div>;
+    } else {
+      extraClimbers = (
+        <div>
+          <label>Extra climber(s): </label>
+          <input
+            type="number"
+            min="0"
+            max="3"
+            value={extra}
+            onChange={(e) => {
+              setExtra(e.target.value);
+            }}
+          />
+        </div>
+      );
     }
 
     function handleSubmit(e) {
@@ -60,22 +80,24 @@ export default function Timeslot(props) {
       setExtraInputs([]);
     }
 
+    let button;
+    if (props.spotsLeft <= 0) {
+      button = (
+        <button type="submit" disabled>
+          No spots left
+        </button>
+      );
+    } else {
+      button = <button type="submit">Book session</button>;
+    }
+
     return (
       <div>
         <form onSubmit={handleSubmit}>
-          <label>Extra climber(s): </label>
-          <input
-            type="number"
-            min="0"
-            max="3"
-            value={extra}
-            onChange={(e) => {
-              setExtra(e.target.value);
-            }}
-          />
+          {extraClimbers}
           {inputs}
 
-          <button type="submit">Book session</button>
+          {button}
         </form>
       </div>
     );
