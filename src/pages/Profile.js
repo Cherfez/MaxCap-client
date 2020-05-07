@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { selectUser } from "../store/user/selectors";
 import { getUserWithStoredToken } from "../store/user/actions";
+import Loading from "../components/Loading";
 
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
@@ -16,6 +17,17 @@ export default function Profile() {
     dispatch(getUserWithStoredToken());
   }, [dispatch]);
 
+  if (!user.bookings) {
+    return <Loading />;
+  }
+
+  const sortedDates = user.bookings.sort((a, b) => {
+    return (
+      new Date(a.pickedDate.substring(4, 15)) -
+      new Date(b.pickedDate.substring(4, 15))
+    );
+  });
+
   return (
     <div id="profile">
       <Jumbotron fluid>
@@ -26,7 +38,7 @@ export default function Profile() {
           <p>Name: {user.name}</p>
           <p>Email: {user.email}</p>
           <p>Phonenr: {user.phone}</p>
-          <p>certified: {user.isBelayer}</p>
+          <p>certified: {user.isBelayer ? "true" : "Sorry, dunno"}</p>
         </div>
 
         <div>
