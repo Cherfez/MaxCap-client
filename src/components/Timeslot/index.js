@@ -14,7 +14,7 @@ export default function Timeslot(props) {
   const [extraInputs, setExtraInputs] = useState([]);
   const dispatch = useDispatch();
   // console.log("book", book);
-  let history = useHistory();
+  const history = useHistory();
 
   const onExtraNameChange = (i, name) => {
     const newExtraInputs = extraInputs.slice();
@@ -50,7 +50,6 @@ export default function Timeslot(props) {
       const namePartner = finalPartners;
       const timeslotId = id;
       const pickedDate = props.date;
-      // console.log("pickedDate", pickedDate);
 
       // console.log("dispatch", namePartner, timeslotId, gymId);
       dispatch(
@@ -88,7 +87,7 @@ export default function Timeslot(props) {
         {parseFloat(startTime).toFixed(2)} - {parseFloat(endTime).toFixed(2)}
       </h4>
       <p>Max Capacity: {maxCap}</p>
-      <p>Spots available: {maxCap - 2}</p>
+      <p>Spots available: {props.spotsLeft}</p>
       {show && showDetails()}
       <div onClick={() => setShow(!show)} key={id} className="extraBtn">
         <IoIosMore />
