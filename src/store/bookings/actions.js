@@ -6,6 +6,7 @@ import {
   showMessageWithTimeout,
   setMessage,
 } from "../appState/actions";
+import { selectToken } from "../user/selectors";
 
 export const fetchBookingsSuccess = (bookings) => ({
   type: "FETCH_BOOKINGS_SUCCESS",
@@ -22,10 +23,15 @@ export const postBookingSuccess = (booking) => ({
   payload: booking,
 });
 
-export const fetchBookings = () => {
+export const deleteBookingSuccess = (bookingId) => ({
+  type: "DELETEBOOKING_SUCCESS",
+  payload: bookingId,
+});
+
+export const fetchBookings = (userId) => {
   return async (dispatch) => {
     try {
-      const response = await axios.get(`${apiUrl}/bookings`);
+      const response = await axios.get(`${apiUrl}/bookings/${userId}`);
       console.log("RESPONSE", response);
 
       dispatch(fetchBookingsSuccess(response.data));
@@ -90,6 +96,33 @@ export const postBookingThunk = (
         console.log(error.message);
         dispatch(setMessage("danger", true, error.message));
       }
+    }
+  };
+};
+
+export const deleteBooking = (bookingId) => {
+  return async (dispatch, getState) => {
+    // get token from the state
+    const token = selectToken(getState());
+
+    // if we have no token, stop
+    if (token === null) return;
+    dispatch(appLoading());
+
+    try {
+      const response = await axios.delete(`${apiUrl}/bookings/${bookingId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      console.log("res", bookingId);
+      dispatch(
+        showMessageWithTimeout("success", false, response.data.message, 3000)
+      );
+      dispatch(deleteBookingSuccess(bookingId));
+      dispatch(appDoneLoading());
+    } catch (e) {
+      console.error(e);
     }
   };
 };
