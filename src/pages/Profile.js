@@ -2,19 +2,42 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { selectUser } from "../store/user/selectors";
-import { getUserWithStoredToken } from "../store/user/actions";
+import Loading from "../components/Loading";
+import { deleteBooking } from "../store/bookings/actions";
+import { fetchBookings } from "../store/bookings/actions";
+import { selectBookings } from "../store/bookings/selectors";
 
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 
 export default function Profile() {
   const user = useSelector(selectUser);
-  console.log("user", user);
+  // console.log("user", user);
+  const bookings = useSelector(selectBookings);
+  // console.log("bookings", bookings);
+  const userId = user.id;
+  // console.log(userId);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getUserWithStoredToken());
-  }, [dispatch]);
+    dispatch(fetchBookings(userId));
+  }, [dispatch, userId]);
+
+  if (!bookings) {
+    return <Loading />;
+  }
+
+  const sortedDates = bookings.sort((a, b) => {
+    return (
+      new Date(a.pickedDate.substring(4, 15)) -
+      new Date(b.pickedDate.substring(4, 15))
+    );
+  });
+
+  function onDelete(id) {
+    console.log("deleting", id);
+    dispatch(deleteBooking(id));
+  }
 
   return (
     <div id="profile">
@@ -26,13 +49,13 @@ export default function Profile() {
           <p>Name: {user.name}</p>
           <p>Email: {user.email}</p>
           <p>Phonenr: {user.phone}</p>
-          <p>certified: {user.isBelayer}</p>
+          <p>certified: {user.isBelayer ? "true" : "Sorry, dunno"}</p>
         </div>
 
         <div>
           <h2>Bookings</h2>
-          {user.bookings ? (
-            user.bookings.map((booking) => {
+          {bookings ? (
+            bookings.map((booking) => {
               return (
                 <div className="userBooking" key={booking.id}>
                   <p>
@@ -54,6 +77,10 @@ export default function Profile() {
                   <p>
                     <strong>Names:</strong> {booking.namePartner.join(", ")}
                   </p>
+
+                  <button onClick={() => onDelete(booking.id)}>
+                    DELETE!!!
+                  </button>
                 </div>
               );
             })

@@ -14,7 +14,7 @@ export default function Timeslot(props) {
   const [extraInputs, setExtraInputs] = useState([]);
   const dispatch = useDispatch();
   // console.log("book", book);
-  let history = useHistory();
+  const history = useHistory();
 
   const onExtraNameChange = (i, name) => {
     const newExtraInputs = extraInputs.slice();
@@ -26,7 +26,7 @@ export default function Timeslot(props) {
     let inputs = [];
     const numberExtra = parseInt(extra);
 
-    if (numberExtra > 0) {
+    if (numberExtra > 0 && numberExtra <= props.spotsLeft - 1) {
       for (let i = 0; i < numberExtra; i++) {
         inputs.push(
           <input
@@ -41,29 +41,12 @@ export default function Timeslot(props) {
       }
     }
 
-    function handleSubmit(e) {
-      e.preventDefault();
-
-      const finalPartners = extraInputs.slice(0, extra);
-      // console.log(finalPartners);
-
-      const namePartner = finalPartners;
-      const timeslotId = id;
-      const pickedDate = props.date;
-      // console.log("pickedDate", pickedDate);
-
-      // console.log("dispatch", namePartner, timeslotId, gymId);
-      dispatch(
-        postBookingThunk(namePartner, timeslotId, gymId, pickedDate, history)
-      );
-      setExtra(0);
-      setShow(false);
-      setExtraInputs([]);
-    }
-
-    return (
-      <div>
-        <form onSubmit={handleSubmit}>
+    let extraClimbers;
+    if (props.spotsLeft <= 1) {
+      extraClimbers = <div></div>;
+    } else {
+      extraClimbers = (
+        <div>
           <label>Extra climber(s): </label>
           <input
             type="number"
@@ -74,9 +57,47 @@ export default function Timeslot(props) {
               setExtra(e.target.value);
             }}
           />
+        </div>
+      );
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+
+      const finalPartners = extraInputs.slice(0, extra);
+      // console.log(finalPartners);
+
+      const namePartner = finalPartners;
+      const timeslotId = id;
+      const pickedDate = props.date;
+
+      // console.log("dispatch", namePartner, timeslotId, gymId);
+      dispatch(
+        postBookingThunk(namePartner, timeslotId, gymId, pickedDate, history)
+      );
+      setExtra(0);
+      setShow(false);
+      setExtraInputs([]);
+    }
+
+    let button;
+    if (props.spotsLeft <= 0) {
+      button = (
+        <button type="submit" disabled>
+          No spots left
+        </button>
+      );
+    } else {
+      button = <button type="submit">Book session</button>;
+    }
+
+    return (
+      <div>
+        <form onSubmit={handleSubmit}>
+          {extraClimbers}
           {inputs}
 
-          <button type="submit">Book session</button>
+          {button}
         </form>
       </div>
     );
@@ -88,7 +109,7 @@ export default function Timeslot(props) {
         {parseFloat(startTime).toFixed(2)} - {parseFloat(endTime).toFixed(2)}
       </h4>
       <p>Max Capacity: {maxCap}</p>
-      <p>Spots available: {maxCap - 2}</p>
+      <p>Spots available: {props.spotsLeft}</p>
       {show && showDetails()}
       <div onClick={() => setShow(!show)} key={id} className="extraBtn">
         <IoIosMore />
