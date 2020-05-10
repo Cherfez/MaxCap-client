@@ -1,3 +1,27 @@
+@media screen and (max-width: 500px) {
+  .navbar .navbar-collapse a {
+    text-decoration: underline;
+    padding: 0.75rem;
+    text-align: center;
+    color: #fff; }
+    .navbar .navbar-collapse a:visited {
+      color: #fff; }
+  .navbar .navbar-collapse p {
+    text-align: center;
+    color: #fff; }
+  .navbar .navbar-collapse .buttonGroup {
+    display: flex;
+    justify-content: space-around; }
+    .navbar .navbar-collapse .buttonGroup button {
+      width: 20%;
+      margin: 0.5rem;
+      background-color: rgba(255, 255, 255, 0.377);
+      color: rgba(255, 255, 255, 0.808);
+      border-color: rgba(255, 255, 255, 0.158); }
+    .navbar .navbar-collapse .buttonGroup .logout {
+      background-color: rgba(236, 132, 132, 0.63);
+      color: rgba(255, 255, 255, 0.808); } }
+
 #homepage .jumbotron {
   background: #f3dbdb;
   background-image: url("https://images.unsplash.com/photo-1488441770602-aed21fc49bd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
