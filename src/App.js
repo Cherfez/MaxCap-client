@@ -1,7 +1,4 @@
 import React, { useEffect } from "react";
-// import "./App.css";
-import "./styling/mobile.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Switch, Route } from "react-router-dom";
 import { getUserWithStoredToken } from "./store/user/actions";
 import { useDispatch } from "react-redux";
@@ -16,6 +13,10 @@ import Confirm from "./pages/Confirm";
 
 import Navigation from "./components/Navigation/index";
 import MessageBox from "./components/MessageBox";
+
+// import "./styling/mobile.css";
+import "../src/styling/css/main.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const dispatch = useDispatch();

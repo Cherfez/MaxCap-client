@@ -1,0 +1,40 @@
+// styling for the nav on differect screen sizes
+@include mediaSm {
+  .navbar {
+    .navbar-collapse {
+      a {
+        text-decoration: underline;
+        padding: 0.75rem;
+        text-align: center;
+        color: #fff;
+
+        &:visited {
+          color: #fff;
+        }
+      }
+
+      p {
+        text-align: center;
+        color: #fff;
+      }
+
+      .buttonGroup {
+        display: flex;
+        justify-content: space-around;
+
+        button {
+          width: 20%;
+          margin: 0.5rem;
+          background-color: rgba(255, 255, 255, 0.377);
+          color: rgba(255, 255, 255, 0.808);
+          border-color: rgba(255, 255, 255, 0.158);
+        }
+
+        .logout {
+          background-color: rgba(236, 132, 132, 0.63);
+          color: rgba(255, 255, 255, 0.808);
+        }
+      }
+    }
+  }
+}

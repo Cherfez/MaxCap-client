@@ -10,6 +10,7 @@
     "bootstrap": "^4.4.1",
     "date-fns": "^2.12.0",
     "moment": "^2.24.0",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",
     "react-datepicker": "^2.14.1",
@@ -22,13 +23,15 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "sass": "^1.26.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass": "node-sass -w src/styling/scss/ -o src/styling/css/ --recursive"
   },
   "eslintConfig": {
     "extends": "react-app"

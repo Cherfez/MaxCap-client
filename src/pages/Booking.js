@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Timeslots from "../components/Timeslots/index";
 import { selectGym } from "../store/gym/selectors";
 import { fetchGymById } from "../store/gym/actions";
+import Loading from "../components/Loading";
 
 import DatePicker from "react-datepicker";
 import addDays from "date-fns/addDays";
@@ -83,7 +84,7 @@ export default function Booking() {
           </Container>
         </div>
       ) : (
-        <h3>Loading ...</h3>
+        <Loading />
       )}
     </div>
   );

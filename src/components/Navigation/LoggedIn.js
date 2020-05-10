@@ -14,9 +14,13 @@ export default function LoggedIn() {
 
   return (
     <>
-      <p style={{ padding: ".5rem 1rem" }}>Hi, {user.name}</p>
-      <Button onClick={() => history.push("/profile")}>Profile</Button>
-      <Button onClick={() => dispatch(logOut())}>Logout</Button>
+      <p>Hi, {user.name}</p>
+      <div className="buttonGroup">
+        <Button onClick={() => history.push("/profile")}>Profile</Button>
+        <Button className="logout" onClick={() => dispatch(logOut())}>
+          Logout
+        </Button>
+      </div>
     </>
   );
 }

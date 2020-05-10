@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Gym from "../components/Gym/index";
 import { selectGyms } from "../store/gym/selectors";
 import { fetchGyms } from "../store/gym/actions";
+import Loading from "../components/Loading";
 
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
@@ -24,6 +25,10 @@ export default function Gyms() {
     setSearchTerm(event.target.value);
   };
 
+  if (!gyms) {
+    return <Loading />;
+  }
+
   const results = !searchTerm
     ? gyms
     : gyms.filter((gym) =>
@@ -33,16 +38,18 @@ export default function Gyms() {
   return (
     <div id="gyms">
       <Jumbotron fluid>
-        <h1>Bookings</h1>
+        <h1>Gyms</h1>
       </Jumbotron>
       <Container>
         <div>
-          Prism la croix tote bag, chartreuse normcore lomo umami. Artisan
-          cardigan migas, austin 90's cronut stumptown vape tilde tousled forage
-          meggings. Tote bag banh mi sriracha mlkshk health goth, subway tile
-          letterpress fingerstache green juice 90's kickstarter tbh. Wayfarers
-          authentic fam helvetica waistcoat VHS disrupt PBR&B glossier sartorial
-          bushwick.
+          <p>
+            Prism la croix tote bag, chartreuse normcore lomo umami. Artisan
+            cardigan migas, austin 90's cronut stumptown vape tilde tousled
+            forage meggings. Tote bag banh mi sriracha mlkshk health goth,
+            subway tile letterpress fingerstache green juice 90's kickstarter
+            tbh. Wayfarers authentic fam helvetica waistcoat VHS disrupt PBR&B
+            glossier sartorial bushwick.
+          </p>
         </div>
 
         <Form inline>
