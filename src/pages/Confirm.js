@@ -22,7 +22,7 @@ export default function Confirm() {
 
   return (
     <div id="confirm">
-      <Jumbotron>
+      <Jumbotron fluid>
         <h1>Booking confirmed</h1>
       </Jumbotron>
 
@@ -31,7 +31,6 @@ export default function Confirm() {
           <h6>Thank you for booking, {user.name}</h6>
           <p>
             We have send you an email with the confirmation of your booking.{" "}
-            <br />
             Please have the confirmation e-mail ready on arrival at the gym.{" "}
             <br />
             Bookings can also be seen on your profile.
@@ -39,7 +38,7 @@ export default function Confirm() {
         </div>
 
         <div id="confirm-info">
-          <h6>Additional info</h6>
+          <h5>Additional info</h5>
           <ul>
             <li>
               Be considerate of other climbers and only book one session a day.

@@ -9,7 +9,6 @@ import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Button from "react-bootstrap/Button";
-import { Col } from "react-bootstrap";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -40,7 +39,7 @@ export default function Login() {
       </Jumbotron>
 
       <Container>
-        <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-5">
+        <Form>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control
@@ -62,18 +61,16 @@ export default function Login() {
               required
             />
           </Form.Group>
-          <Form.Group className="mt-5">
-            <Button variant="primary" type="submit" onClick={submitForm}>
+          <Form.Group className="button">
+            <Button type="submit" onClick={submitForm}>
               Log in
             </Button>
           </Form.Group>
         </Form>
 
-        <div>
-          <h4>No account, yet?</h4>
-          <Link to="/signup" style={{ textAlign: "center" }}>
-            Click here to sign up
-          </Link>
+        <div className="signup">
+          <h5>No account, yet?</h5>
+          <Link to="/signup">Click here to sign up</Link>
         </div>
       </Container>
     </div>

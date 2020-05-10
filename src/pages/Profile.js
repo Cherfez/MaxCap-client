@@ -49,13 +49,23 @@ export default function Profile() {
           <p>Name: {user.name}</p>
           <p>Email: {user.email}</p>
           <p>Phonenr: {user.phone}</p>
-          <p>certified: {user.isBelayer ? "true" : "Sorry, dunno"}</p>
+          <p>certified belayer: {user.isBelayer ? "true" : "Sorry, dunno"}</p>
         </div>
 
         <div>
-          <h2>Bookings</h2>
+          <h3>Your Bookings</h3>
           {bookings ? (
             bookings.map((booking) => {
+              let names;
+              if (booking.namePartner.length > 0) {
+                names = (
+                  <p>
+                    <strong>Name(s):</strong> {booking.namePartner.join(", ")}
+                  </p>
+                );
+              } else {
+                names = <p></p>;
+              }
               return (
                 <div className="userBooking" key={booking.id}>
                   <p>
@@ -74,12 +84,10 @@ export default function Profile() {
                     <strong>Climbing partner(s):</strong>{" "}
                     {booking.namePartner.length}
                   </p>
-                  <p>
-                    <strong>Names:</strong> {booking.namePartner.join(", ")}
-                  </p>
+                  {names}
 
                   <button onClick={() => onDelete(booking.id)}>
-                    DELETE!!!
+                    Cancel booking
                   </button>
                 </div>
               );

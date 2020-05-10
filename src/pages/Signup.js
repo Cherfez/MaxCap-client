@@ -46,7 +46,7 @@ export default function SignUp() {
       </Jumbotron>
 
       <Container>
-        <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-5">
+        <Form>
           <Form.Group controlId="formBasicName">
             <Form.Label>
               Name <span>*</span>
@@ -73,7 +73,7 @@ export default function SignUp() {
             />
           </Form.Group>
 
-          <Form.Group controlId="formBasicEmail">
+          <Form.Group controlId="formBasicPhone">
             <Form.Label>
               Phone number <span>*</span>
             </Form.Label>
@@ -99,7 +99,7 @@ export default function SignUp() {
             />
           </Form.Group>
 
-          <Form.Group controlId="formBasicPassword">
+          <Form.Group controlId="formBasicBelayer" className="certified-info">
             <Form.Label>Certified belayer</Form.Label>
             <Form.Control
               value={certified}
@@ -107,13 +107,13 @@ export default function SignUp() {
               type="checkbox"
             />
             <Form.Text className="text-muted">
-              You are a certified belayer. If you cant show your certificate the
-              gym can refuse entry.
+              You are a certified belayer. If you can't show your certificate
+              the gym can refuse entry.
             </Form.Text>
           </Form.Group>
 
-          <Form.Group className="mt-5">
-            <Button variant="primary" type="submit" onClick={submitForm}>
+          <Form.Group className="button">
+            <Button type="submit" onClick={submitForm}>
               Sign up
             </Button>
             <Form.Text className="text-muted">
@@ -122,8 +122,8 @@ export default function SignUp() {
           </Form.Group>
         </Form>
 
-        <div>
-          <h4>Already have an account?</h4>
+        <div className="login">
+          <h5>Already have an account?</h5>
           <Link to="/login">Click here to log in</Link>
         </div>
       </Container>

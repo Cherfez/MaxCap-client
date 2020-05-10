@@ -38,10 +38,8 @@ export const fetchBookings = (userId) => {
     } catch (error) {
       if (error.response) {
         console.log(error.response.data.message);
-        dispatch(setMessage("danger", true, error.response.data.message));
       } else {
         console.log(error.message);
-        dispatch(setMessage("danger", true, error.message));
       }
     }
   };
@@ -86,7 +84,7 @@ export const postBookingThunk = (
 
       dispatch(postBookingSuccess(response.data.booking));
       history.push(`/gyms/${gymId}/booking/${response.data.booking.id}`);
-      dispatch(showMessageWithTimeout("success", true, "Booking made!", 6000));
+      // dispatch(showMessageWithTimeout("success", true, "Booking made!", 6000));
       dispatch(appDoneLoading());
     } catch (error) {
       if (error.response) {
