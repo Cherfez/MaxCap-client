@@ -20,6 +20,13 @@
     background-color: rgba(236, 132, 132, 0.63);
     color: rgba(255, 255, 255, 0.808); }
 
+.navbar .navbar-collapse .login {
+  background-color: rgba(132, 236, 179, 0.63);
+  color: rgba(255, 255, 255, 0.808);
+  border-color: rgba(255, 255, 255, 0.158);
+  display: flex;
+  justify-content: center; }
+
 @media screen and (max-width: 768px) {
   .navbar .navbar-collapse {
     padding: 0.5rem; }
@@ -34,6 +41,10 @@
   .navbar .navbar-collapse .buttonGroup button {
     width: 20%;
     margin: 0.5rem; } }
+
+* {
+  padding: 0;
+  margin: 0; }
 
 #homepage .jumbotron {
   background: #f3dbdb;
@@ -206,6 +217,123 @@
 #signup .container .certified-info .text-muted {
   margin-top: 0; }
 
+@media screen and (min-width: 769px) and (max-width: 990px) {
+  #homepage .container,
+  #gyms .container,
+  #booking .container,
+  #login .container,
+  #signup .container,
+  #profile .container,
+  #confirm .container {
+    padding: 0 3rem; }
+    #homepage .container p,
+    #gyms .container p,
+    #booking .container p,
+    #login .container p,
+    #signup .container p,
+    #profile .container p,
+    #confirm .container p {
+      line-height: 2rem; }
+  #gyms .container {
+    padding: 0; }
+    #gyms .container .intro {
+      padding: 0 2rem; }
+      #gyms .container .intro p {
+        margin-bottom: 0; }
+    #gyms .container .form-inline input {
+      width: 40%;
+      margin: 1.5rem 1.3rem 1.3rem 1.3rem; }
+    #gyms .container .allGyms {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly; }
+      #gyms .container .allGyms .gym {
+        width: 45%;
+        margin: 1rem;
+        padding: 1.5rem; }
+        #gyms .container .allGyms .gym h3 {
+          height: 30%; }
+        #gyms .container .allGyms .gym button {
+          margin-bottom: 0; }
+  #booking .container {
+    padding: 0; }
+    #booking .container .info-gym {
+      margin-bottom: 1rem; }
+      #booking .container .info-gym p {
+        margin-bottom: 0; }
+    #booking .container .react-datepicker-wrapper {
+      display: block;
+      margin-bottom: 1rem; }
+      #booking .container .react-datepicker-wrapper input {
+        width: 40%;
+        padding: 0.2rem; }
+    #booking .container .timeslots {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly; }
+      #booking .container .timeslots .timeslot {
+        margin: 0.5rem;
+        width: 45%;
+        padding: 1.5rem;
+        align-self: flex-start; }
+        #booking .container .timeslots .timeslot form input[type="text"] {
+          display: block;
+          margin: 1rem auto; }
+        #booking .container .timeslots .timeslot form button {
+          margin-top: 1rem; }
+  #confirm .container #confirm-booking {
+    margin-bottom: 2rem;
+    padding: 1rem 2rem;
+    text-align: start; }
+    #confirm .container #confirm-booking p {
+      margin-bottom: 0; }
+  #confirm .container #confirm-info {
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem; }
+    #confirm .container #confirm-info h5 {
+      font-size: 1.65rem; }
+    #confirm .container #confirm-info ul {
+      text-align: start;
+      padding-left: 0.75rem; }
+      #confirm .container #confirm-info ul li {
+        padding: 0.3rem 0; }
+  #profile .container {
+    padding: 0; }
+    #profile .container .userInfo p {
+      margin-bottom: 0;
+      margin-left: 4rem; }
+    #profile .container h3 {
+      margin: 1.5rem;
+      font-size: 2rem; }
+    #profile .container .allBookings {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly; }
+      #profile .container .allBookings .userBooking {
+        margin: 1rem;
+        padding: 1.5rem 2rem;
+        width: 45%; }
+        #profile .container .allBookings .userBooking button {
+          padding: 0.2rem 0.7rem; }
+  #login .container form,
+  #signup .container form {
+    margin-bottom: 3.5rem; }
+    #login .container form .form-group,
+    #signup .container form .form-group {
+      margin-bottom: 2rem; }
+      #login .container form .form-group input,
+      #signup .container form .form-group input {
+        width: 60%;
+        margin: 0 auto; }
+  #login .container .login,
+  #login .container .signup,
+  #signup .container .login,
+  #signup .container .signup {
+    margin-bottom: 2rem; } }
+
 @media screen and (max-width: 768px) {
   #homepage .jumbotron,
   #gyms .jumbotron,
@@ -274,6 +402,8 @@
   #profile .container .userBooking {
     margin: 2rem;
     padding: 1.5rem 2rem; }
+    #profile .container .userBooking button {
+      padding: 0 0.65rem; }
   #login .container form,
   #signup .container form {
     margin-bottom: 3.5rem; }

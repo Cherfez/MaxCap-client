@@ -41,7 +41,7 @@ export default function Gyms() {
         <h1>Gyms</h1>
       </Jumbotron>
       <Container>
-        <div>
+        <div className="intro">
           <p>
             Prism la croix tote bag, chartreuse normcore lomo umami. Artisan
             cardigan migas, austin 90's cronut stumptown vape tilde tousled
@@ -62,7 +62,7 @@ export default function Gyms() {
           />
         </Form>
 
-        <div>
+        <div className="allGyms">
           {results.map((gym) => (
             <Gym gym={gym} key={gym.id} />
           ))}

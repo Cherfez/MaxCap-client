@@ -54,7 +54,7 @@ export default function Booking() {
             <h1>{gymDetails.name}</h1>
           </Jumbotron>
           <Container>
-            <div>
+            <div className="info-gym">
               <p>
                 Openingtimes:{" "}
                 <strong>

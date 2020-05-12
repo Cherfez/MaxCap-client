@@ -43,7 +43,7 @@ export default function Timeslots(props) {
   };
 
   return (
-    <div>
+    <div className="timeslots">
       {props ? (
         props.info <= 0 ? (
           <h3>No timeslots</h3>

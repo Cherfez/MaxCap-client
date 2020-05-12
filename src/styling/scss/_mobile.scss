@@ -1,3 +1,200 @@
+//desktop & laptops
+@include mediaLg {
+  #homepage,
+  #gyms,
+  #booking,
+  #login,
+  #signup,
+  #profile,
+  #confirm {
+    .container {
+      padding: 0 3rem;
+
+      p {
+        line-height: 2rem;
+      }
+    }
+  }
+
+  #gyms {
+    .container {
+      padding: 0;
+
+      .intro {
+        padding: 0 2rem;
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+
+      .form-inline {
+        input {
+          width: 40%;
+          margin: 1.5rem 1.3rem 1.3rem 1.3rem;
+        }
+      }
+
+      .allGyms {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        .gym {
+          width: 45%;
+          margin: 1rem;
+          padding: 1.5rem;
+
+          h3 {
+            height: 30%;
+          }
+
+          button {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  #booking {
+    .container {
+      padding: 0;
+
+      .info-gym {
+        margin-bottom: 1rem;
+        p {
+          margin-bottom: 0;
+        }
+      }
+
+      .react-datepicker-wrapper {
+        display: block;
+        margin-bottom: 1rem;
+
+        input {
+          width: 40%;
+          padding: 0.2rem;
+        }
+      }
+
+      .timeslots {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        .timeslot {
+          margin: 0.5rem;
+          width: 45%;
+          padding: 1.5rem;
+          align-self: flex-start;
+
+          form {
+            input[type="text"] {
+              display: block;
+              margin: 1rem auto;
+            }
+            button {
+              margin-top: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #confirm {
+    .container {
+      #confirm-booking {
+        margin-bottom: 2rem;
+        padding: 1rem 2rem;
+        text-align: start;
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+
+      #confirm-info {
+        margin-bottom: 2rem;
+        padding: 1rem 1.5rem;
+
+        h5 {
+          font-size: 1.65rem;
+        }
+
+        ul {
+          text-align: start;
+          padding-left: 0.75rem;
+
+          li {
+            padding: 0.3rem 0;
+          }
+        }
+      }
+    }
+  }
+
+  #profile {
+    .container {
+      padding: 0;
+
+      .userInfo {
+        p {
+          margin-bottom: 0;
+          margin-left: 4rem;
+        }
+      }
+
+      h3 {
+        margin: 1.5rem;
+        font-size: 2rem;
+      }
+
+      .allBookings {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        .userBooking {
+          margin: 1rem;
+          padding: 1.5rem 2rem;
+          width: 45%;
+
+          button {
+            padding: 0.2rem 0.7rem;
+          }
+        }
+      }
+    }
+  }
+
+  #login,
+  #signup {
+    .container {
+      form {
+        margin-bottom: 3.5rem;
+
+        .form-group {
+          margin-bottom: 2rem;
+          input {
+            width: 60%;
+            margin: 0 auto;
+          }
+        }
+      }
+
+      .login,
+      .signup {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
 // tablets and small laptops
 @include mediaMd {
   #homepage,
@@ -112,6 +309,10 @@
       .userBooking {
         margin: 2rem;
         padding: 1.5rem 2rem;
+
+        button {
+          padding: 0 0.65rem;
+        }
       }
     }
   }
