@@ -1,0 +1,306 @@
+// tablets and small laptops
+@include mediaMd {
+  #homepage,
+  #gyms,
+  #booking,
+  #login,
+  #signup,
+  #profile,
+  #confirm {
+    .jumbotron {
+      height: 30vh;
+    }
+
+    .container {
+      padding: 0 2rem;
+
+      p {
+        line-height: 2rem;
+      }
+    }
+  }
+
+  #gyms {
+    .container {
+      .form-inline {
+        input {
+          width: 60%;
+          margin: 1.5rem 1.3rem 1.3rem 1.3rem;
+        }
+      }
+
+      .gym {
+        margin: 2rem 0.5rem;
+        padding: 1.5rem;
+
+        button {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  #booking {
+    .container {
+      .react-datepicker-wrapper {
+        display: block;
+        margin-bottom: 1rem;
+      }
+
+      .timeslot {
+        margin: 2rem 0.5rem;
+        padding: 1.5rem;
+
+        form {
+          input[type="text"] {
+            display: block;
+            margin: 1rem auto;
+          }
+          button {
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  #confirm {
+    .container {
+      #confirm-booking {
+        margin-bottom: 2rem;
+        padding: 1rem;
+        text-align: start;
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+
+      #confirm-info {
+        margin-bottom: 2rem;
+        padding: 1rem 1.5rem;
+
+        h5 {
+          font-size: 1.5rem;
+        }
+
+        ul {
+          text-align: start;
+          padding-left: 0.75rem;
+
+          li {
+            padding: 0.3rem 0;
+          }
+        }
+      }
+    }
+  }
+
+  #profile {
+    .container {
+      .userInfo {
+        p {
+          margin-bottom: 0;
+          margin-left: 2rem;
+        }
+      }
+
+      h3 {
+        margin: 1.5rem;
+      }
+
+      .userBooking {
+        margin: 2rem;
+        padding: 1.5rem 2rem;
+      }
+    }
+  }
+
+  #login,
+  #signup {
+    .container {
+      form {
+        margin-bottom: 3.5rem;
+
+        .form-group {
+          margin-bottom: 2rem;
+          input {
+            width: 60%;
+            margin: 0 auto;
+          }
+        }
+      }
+
+      .login,
+      .signup {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+@include mediaSm {
+  #homepage,
+  #gyms,
+  #booking,
+  #login,
+  #signup,
+  #profile,
+  #confirm {
+    .jumbotron {
+      height: 25vh;
+    }
+
+    .container {
+      padding: 0 1.5rem;
+    }
+  }
+
+  #homepage,
+  #gyms,
+  #booking {
+    .container {
+      p {
+        line-height: 1.75rem;
+      }
+    }
+  }
+
+  #gyms {
+    .container {
+      .form-inline {
+        input {
+          width: 60%;
+          margin: 1rem 1.3rem 1.3rem 1.3rem;
+        }
+      }
+
+      .gym {
+        margin: 1rem 6%;
+        padding: 0.5rem;
+
+        h3 {
+          padding: 1rem;
+        }
+
+        button {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+  #booking {
+    .container {
+      .react-datepicker-wrapper {
+        display: block;
+        margin-bottom: 1rem;
+      }
+
+      .timeslot {
+        margin: 1rem 2rem;
+        padding: 1rem;
+
+        .extraClimbers {
+          display: block;
+          margin: 1rem auto;
+        }
+
+        button {
+          display: block;
+          margin: 1rem auto;
+        }
+      }
+    }
+  }
+
+  #confirm {
+    .container {
+      text-align: start;
+
+      #confirm-booking {
+        padding: 1rem;
+        margin-bottom: 2rem;
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+
+      #confirm-info {
+        margin-bottom: 2rem;
+        padding: 1rem;
+
+        h5 {
+          text-align: center;
+        }
+
+        ul {
+          padding-left: 1rem;
+          margin-bottom: 0;
+
+          li {
+            padding: 0.3rem 0;
+          }
+        }
+      }
+    }
+  }
+
+  #profile {
+    .container {
+      .userInfo {
+        margin-left: 1rem;
+        margin-bottom: 2rem;
+
+        p {
+          margin-bottom: 0;
+          line-height: 1.7rem;
+        }
+      }
+
+      .userBooking {
+        padding: 1.3rem 10%;
+        margin: 1rem;
+
+        button {
+          width: 9rem;
+        }
+      }
+    }
+  }
+
+  #login,
+  #signup {
+    .container {
+      .form-control {
+        width: 70%;
+        margin: 0 auto;
+      }
+
+      .button {
+        margin-top: 2rem;
+
+        button {
+          padding: 0.4rem 0.75rem;
+        }
+      }
+
+      .signup,
+      .login {
+        margin-top: 10%;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  #signup {
+    .container {
+      .certified-info {
+        .text-muted {
+          padding: 0 20%;
+        }
+      }
+    }
+  }
+}
