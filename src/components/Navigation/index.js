@@ -21,7 +21,7 @@ export default function Navigation() {
       variant="dark"
       expand="md"
       expanded={expanded}
-      className="py-md-3"
+      className="py-md-1"
     >
       <Navbar.Brand as={NavLink} to="/">
         MaxCap.
