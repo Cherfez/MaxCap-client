@@ -53,35 +53,39 @@ export default function Booking() {
           <Jumbotron fluid>
             <h1>{gymDetails.name}</h1>
           </Jumbotron>
-          <Container>
-            <div className="info-gym">
-              <p>
-                Openingtimes:{" "}
-                <strong>
-                  {parseFloat(gymDetails.openHrs).toFixed(2)} -{" "}
-                  {parseFloat(gymDetails.closeHrs).toFixed(2)} hr
-                </strong>
-              </p>
-              <p>
-                Session time: <strong>2hr</strong>
-              </p>
+          <div className="containerr">
+            <div className="intro-gym">
+              <div className="info-gym">
+                <p>
+                  Openingtimes:{" "}
+                  <strong>
+                    {parseFloat(gymDetails.openHrs).toFixed(2)} -{" "}
+                    {parseFloat(gymDetails.closeHrs).toFixed(2)} hr
+                  </strong>
+                </p>
+                <p>
+                  Session time: <strong>2hr</strong>
+                </p>
+              </div>
+
+              <div className="date">
+                <DatePicker
+                  dateFormat="eeeeeee dd-MM-yyyy"
+                  minDate={new Date()}
+                  maxDate={addDays(new Date(), 7)}
+                  selected={startDate}
+                  onChange={(date) => {
+                    setStartDate(date);
+                    setTimes(false);
+                  }}
+                  placeholderText="Select a date"
+                />
+
+                <button onClick={checkDate}>Check</button>
+              </div>
             </div>
-
-            <DatePicker
-              dateFormat="eeeeeee dd-MM-yyyy"
-              minDate={new Date()}
-              maxDate={addDays(new Date(), 7)}
-              selected={startDate}
-              onChange={(date) => {
-                setStartDate(date);
-                setTimes(false);
-              }}
-              placeholderText="Select a date"
-            />
-
-            <button onClick={checkDate}>Check</button>
             {times}
-          </Container>
+          </div>
         </div>
       ) : (
         <Loading />

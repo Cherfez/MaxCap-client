@@ -40,7 +40,7 @@ export default function Gyms() {
       <Jumbotron fluid>
         <h1>Gyms</h1>
       </Jumbotron>
-      <Container>
+      <div className="containerr">
         <div className="intro">
           <p>
             Prism la croix tote bag, chartreuse normcore lomo umami. Artisan
@@ -67,7 +67,7 @@ export default function Gyms() {
             <Gym gym={gym} key={gym.id} />
           ))}
         </div>
-      </Container>
+      </div>
     </div>
   );
 }

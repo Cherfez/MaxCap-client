@@ -26,7 +26,7 @@ export default function Confirm() {
         <h1>Booking confirmed</h1>
       </Jumbotron>
 
-      <Container>
+      <div className="containerr">
         <div id="confirm-booking">
           <h6>Thank you for booking, {user.name}</h6>
           <p>
@@ -55,7 +55,7 @@ export default function Confirm() {
             <li>For any other questions, please contact your climbing gym.</li>
           </ul>
         </div>
-      </Container>
+      </div>
     </div>
   );
 }

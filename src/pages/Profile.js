@@ -44,7 +44,7 @@ export default function Profile() {
       <Jumbotron fluid>
         <h1>Welcome, {user.name}</h1>
       </Jumbotron>
-      <Container>
+      <div className="containerr">
         <div className="userInfo">
           <p>Name: {user.name}</p>
           <p>Email: {user.email}</p>
@@ -96,7 +96,7 @@ export default function Profile() {
             <h3>No made bookings</h3>
           )}
         </div>
-      </Container>
+      </div>
     </div>
   );
 }

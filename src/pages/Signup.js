@@ -45,7 +45,7 @@ export default function SignUp() {
         <h1>Singup</h1>
       </Jumbotron>
 
-      <Container>
+      <div className="containerr">
         <Form>
           <Form.Group controlId="formBasicName">
             <Form.Label>
@@ -126,7 +126,7 @@ export default function SignUp() {
           <h5>Already have an account?</h5>
           <Link to="/login">Click here to log in</Link>
         </div>
-      </Container>
+      </div>
     </div>
   );
 }
