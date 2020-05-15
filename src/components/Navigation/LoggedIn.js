@@ -14,9 +14,11 @@ export default function LoggedIn() {
 
   return (
     <>
-      <p>Hi, {user.name}</p>
+      <p className="mr-md-4 mb-md-0">Hi, {user.name}</p>
       <div className="buttonGroup">
-        <Button onClick={() => history.push("/profile")}>Profile</Button>
+        <Button onClick={() => history.push("/profile")} className="mr-md-4">
+          Profile
+        </Button>
         <Button className="logout" onClick={() => dispatch(logOut())}>
           Logout
         </Button>

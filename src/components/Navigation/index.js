@@ -16,7 +16,13 @@ export default function Navigation() {
   const loginLogoutControls = token ? <LoggedIn /> : <LoggedOut />;
 
   return (
-    <Navbar bg="dark" variant="dark" expand="md" expanded={expanded}>
+    <Navbar
+      bg="dark"
+      variant="dark"
+      expand="md"
+      expanded={expanded}
+      className="py-md-1"
+    >
       <Navbar.Brand as={NavLink} to="/">
         MaxCap.
       </Navbar.Brand>
@@ -25,12 +31,12 @@ export default function Navigation() {
         onClick={() => setExpanded(expanded ? false : "expanded")}
       />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
+        <Nav className="mr-auto ml-md-5">
           <NavLink to="/gyms" onClick={() => setExpanded(false)}>
             Search gyms
           </NavLink>
-          {loginLogoutControls}
         </Nav>
+        {loginLogoutControls}
       </Navbar.Collapse>
     </Navbar>
   );

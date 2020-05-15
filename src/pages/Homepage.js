@@ -10,7 +10,7 @@ export default function Homepage() {
       <Jumbotron fluid>
         <h1>MaxCap.</h1>
       </Jumbotron>
-      <Container>
+      <div className="containerr">
         <h2>Welcome climber!</h2>
         <p>
           Prism la croix tote bag, chartreuse normcore lomo umami. Artisan
@@ -26,7 +26,7 @@ export default function Homepage() {
         <Link to="/gyms">
           <button>Search your gym!</button>
         </Link>
-      </Container>
+      </div>
     </div>
   );
 }

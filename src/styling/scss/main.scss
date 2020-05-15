@@ -1,303 +1,264 @@
-// "sass": "node-sass -w src/styling/scss/ -o src/styling/css/ --recursive"
-// main file for all the styling
-
 @import "config";
 @import "nav";
 
 #homepage .jumbotron {
-  background: #f3dbdb;
+  @extend %background;
   background-image: url("https://images.unsplash.com/photo-1488441770602-aed21fc49bd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
-  background-repeat: no-repeat;
   background-position: center;
 }
 
 #gyms .jumbotron {
-  background: #f3dbdb;
+  @extend %background;
   background-image: url("https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
-  background-repeat: no-repeat;
   background-position: center;
 }
 
 #booking .jumbotron {
-  background: #f3dbdb;
+  @extend %background;
   background-image: url("https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
-  background-repeat: no-repeat;
   background-position: center;
 }
 
 #login .jumbotron {
-  background: #f3dbdb;
+  @extend %background;
   background-image: url("https://images.unsplash.com/photo-1544198365-f5d60b6d8190?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
-  background-repeat: no-repeat;
   background-position: top;
 }
 
 #signup .jumbotron {
-  background: #f3dbdb;
+  @extend %background;
   background-image: url("https://images.unsplash.com/photo-1443890923422-7819ed4101c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
-  background-repeat: no-repeat;
   background-position: center;
 }
 
 #profile .jumbotron {
-  background: #f3dbdb;
+  @extend %background;
   background-image: url("https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=755&q=80");
-  background-repeat: no-repeat;
   background-position: center;
 }
 
 #confirm .jumbotron {
-  background: #f3dbdb;
+  @extend %background;
   background-image: url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80");
-  background-repeat: no-repeat;
   background-position: center;
 }
 
-@include mediaSm {
-  #homepage,
-  #gyms,
-  #booking,
-  #login,
-  #signup,
-  #profile,
-  #confirm {
-    .jumbotron {
-      height: 25vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    h1 {
-      text-align: center;
-      color: #fff;
-    }
-
-    .container {
-      padding: 0 1.5rem;
-      text-align: center;
-    }
+#homepage,
+#gyms,
+#booking,
+#login,
+#signup,
+#profile,
+#confirm {
+  .jumbotron {
+    @extend %basic-flexbox;
+    height: 25vh;
   }
 
-  #homepage,
-  #gyms,
-  #booking {
-    .container {
-      p {
-        line-height: 1.75rem;
+  h1 {
+    text-align: center;
+    color: #fff;
+  }
+
+  .containerr {
+    text-align: center;
+    padding: 0 1.5rem;
+  }
+}
+
+#homepage,
+#gyms,
+#booking {
+  .containerr {
+    p {
+      line-height: 1.75rem;
+    }
+    button {
+      @extend %button-style;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+#gyms {
+  .containerr {
+    .form-inline {
+      @extend %basic-flexbox;
+      flex-direction: column;
+
+      input {
+        width: 60%;
+        margin: 1rem 1.3rem 1.3rem 1.3rem;
+      }
+    }
+
+    .gym {
+      @extend %basic-box;
+      margin: 1rem;
+
+      h3 {
+        padding: 1rem;
       }
 
       button {
-        padding: 0.4rem 0.75rem;
         margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+#booking {
+  .containerr {
+    .react-datepicker-wrapper {
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .timeslot {
+      @extend %basic-box;
+      margin: 1rem 2rem;
+      padding: 1rem;
+
+      .extraClimbers {
+        @extend %block-middle;
+      }
+
+      button {
+        @extend %block-middle;
+      }
+
+      .extraBtn {
+        background-color: #343a4036;
+        color: #343a40;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+#confirm {
+  .containerr {
+    text-align: start;
+    #confirm-booking {
+      background-color: rgba(108, 180, 108, 0.418);
+      padding: 1rem;
+      margin-bottom: 2rem;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    #confirm-info {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      border: rgba(0, 0, 0, 0.411) solid 1px;
+
+      h5 {
         text-align: center;
-        color: #fff;
-        background-color: #343a40;
-        box-shadow: 0 0 20px #eee;
-        border-radius: 10px;
-        cursor: pointer;
-      }
-    }
-  }
-
-  #gyms {
-    .container {
-      .form-inline {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-        input {
-          width: 60%;
-          margin: 1rem 1.3rem 1.3rem 1.3rem;
-        }
       }
 
-      .gym {
-        border: rgba(0, 0, 0, 0.411) solid 1px;
-        margin: 1rem 6%;
-        padding: 0.5rem;
-        -webkit-box-shadow: 4px 4px 4px -2px rgba(138, 138, 138, 0.61);
-        -moz-box-shadow: 4px 4px 4px -2px rgba(138, 138, 138, 0.61);
-        box-shadow: 4px 4px 4px -2px rgba(138, 138, 138, 0.61);
+      ul {
+        padding-left: 1rem;
+        margin-bottom: 0;
 
-        h3 {
-          padding: 1rem;
+        li {
+          padding: 0.3rem 0;
         }
       }
     }
   }
+}
 
-  #booking {
-    .container {
-      .react-datepicker-wrapper {
-        display: block;
-        margin-bottom: 1rem;
-      }
-
-      .timeslot {
-        border: rgba(0, 0, 0, 0.411) solid 1px;
-        margin: 1rem 2rem;
-        padding: 1rem;
-        -webkit-box-shadow: 4px 4px 4px -2px rgba(138, 138, 138, 0.61);
-        -moz-box-shadow: 4px 4px 4px -2px rgba(138, 138, 138, 0.61);
-        box-shadow: 4px 4px 4px -2px rgba(138, 138, 138, 0.61);
-
-        .extraClimbers {
-          display: block;
-          margin: 1rem auto;
-        }
-
-        .extraBtn {
-          background-color: #343a4036;
-          color: #343a40;
-          font-size: 1rem;
-        }
-
-        button {
-          display: block;
-          margin: 1rem auto;
-        }
-      }
-    }
-  }
-
-  #confirm {
-    .container {
+#profile {
+  .containerr {
+    .userInfo {
       text-align: start;
+      margin-left: 1rem;
+      margin-bottom: 2rem;
 
-      #confirm-booking {
-        background-color: rgba(108, 180, 108, 0.418);
-        padding: 1rem;
-        margin-bottom: 2rem;
-
-        p {
-          margin-bottom: 0;
-        }
+      p {
+        margin-bottom: 0;
+        line-height: 1.7rem;
       }
+    }
 
-      #confirm-info {
-        border: rgba(0, 0, 0, 0.411) solid 1px;
-        margin-bottom: 2rem;
-        padding: 1rem;
+    .userBooking {
+      text-align: start;
+      display: flex;
+      flex-flow: column wrap;
+      @extend %basic-box;
+      padding: 1.3rem 10%;
+      margin: 1rem;
 
-        h5 {
-          text-align: center;
-        }
-
-        ul {
-          padding-left: 1rem;
-          margin-bottom: 0;
-
-          li {
-            padding: 0.3rem 0;
-          }
-        }
+      button {
+        align-self: flex-end;
+        background-color: rgba(226, 36, 36, 0.63);
+        border: 1px solid black;
+        width: 9rem;
       }
     }
   }
+}
 
-  #profile {
-    .container {
-      .userInfo {
-        text-align: start;
-        margin-left: 1rem;
-        margin-bottom: 2rem;
-
-        p {
-          margin-bottom: 0;
-          line-height: 1.7rem;
-        }
-      }
-
-      .userBooking {
-        border: rgba(0, 0, 0, 0.411) solid 1px;
-        padding: 1.3rem 10%;
-        margin: 1rem;
-        text-align: start;
-        display: flex;
-        flex-flow: column wrap;
-        -webkit-box-shadow: 4px 4px 4px -2px rgba(138, 138, 138, 0.61);
-        -moz-box-shadow: 4px 4px 4px -2px rgba(138, 138, 138, 0.61);
-        box-shadow: 4px 4px 4px -2px rgba(138, 138, 138, 0.61);
-
-        button {
-          align-self: flex-end;
-          width: 9rem;
-          background-color: rgba(226, 36, 36, 0.63);
-          border: 1px solid black;
-        }
+#login,
+#signup {
+  .containerr {
+    .form-control {
+      width: 70%;
+      margin: 0 auto;
+    }
+    .button {
+      margin-top: 2rem;
+      button {
+        @extend %button-style;
       }
     }
-  }
 
-  #login,
-  #signup {
-    .container {
-      .form-control {
-        width: 70%;
-        margin: 0 auto;
-      }
+    .signup,
+    .login {
+      margin-top: 15%;
+      margin-bottom: 2rem;
+      a {
+        color: #007bff;
 
-      .button {
-        margin-top: 2rem;
-
-        button {
-          padding: 0.4rem 0.75rem;
-          text-align: center;
-          color: #fff;
-          background-color: #343a40;
-          box-shadow: 0 0 20px #eee;
-          border-radius: 10px;
-          border: 1px solid black;
-          cursor: pointer;
-        }
-      }
-
-      .signup,
-      .login {
-        margin-top: 10%;
-        margin-bottom: 2rem;
-
-        a {
+        &:visited {
           color: #007bff;
-
-          &:visited {
-            color: #007bff;
-          }
         }
       }
     }
   }
+}
 
-  #signup {
-    .container {
-      .form-group {
-        span {
-          color: rgba(226, 36, 36, 0.63);
-        }
+#signup {
+  .containerr {
+    .form-group {
+      span {
+        color: rgba(226, 36, 36, 0.63);
       }
+    }
 
-      .certified-info {
-        input[type="checkbox"] {
-          display: inline;
-          width: 10%;
-          font-size: 0.2rem;
-          margin-left: 1rem;
-        }
-
-        label {
-          margin-bottom: 0;
-        }
+    .certified-info {
+      input[type="checkbox"] {
+        display: inline;
+        width: 10%;
+        font-size: 0.2rem;
+        margin-left: 1rem;
 
         .text-muted {
-          margin-top: 0;
           padding: 0 20%;
         }
       }
+
+      label {
+        margin-bottom: 0;
+      }
+
+      .text-muted {
+        margin-top: 0;
+      }
     }
   }
-
-  // end
 }
+
+@import "mobile";

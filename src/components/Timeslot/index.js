@@ -106,7 +106,7 @@ export default function Timeslot(props) {
   return (
     <div key={id} className="timeslot">
       <h4>
-        {parseFloat(startTime).toFixed(2)} - {parseFloat(endTime).toFixed(2)}
+        {parseFloat(startTime).toFixed(2)} - {parseFloat(endTime).toFixed(2)} hr
       </h4>
       <p>Max Capacity: {maxCap}</p>
       <p>Spots available: {props.spotsLeft}</p>

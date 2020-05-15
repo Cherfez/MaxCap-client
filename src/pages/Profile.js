@@ -44,7 +44,7 @@ export default function Profile() {
       <Jumbotron fluid>
         <h1>Welcome, {user.name}</h1>
       </Jumbotron>
-      <Container>
+      <div className="containerr">
         <div className="userInfo">
           <p>Name: {user.name}</p>
           <p>Email: {user.email}</p>
@@ -52,8 +52,8 @@ export default function Profile() {
           <p>certified belayer: {user.isBelayer ? "true" : "Sorry, dunno"}</p>
         </div>
 
-        <div>
-          <h3>Your Bookings</h3>
+        <h3>Your Bookings</h3>
+        <div className="allBookings">
           {bookings ? (
             bookings.map((booking) => {
               let names;
@@ -64,7 +64,7 @@ export default function Profile() {
                   </p>
                 );
               } else {
-                names = <p></p>;
+                names = <p style={{ height: "32px" }}></p>;
               }
               return (
                 <div className="userBooking" key={booking.id}>
@@ -96,7 +96,7 @@ export default function Profile() {
             <h3>No made bookings</h3>
           )}
         </div>
-      </Container>
+      </div>
     </div>
   );
 }

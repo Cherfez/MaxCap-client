@@ -1,0 +1,407 @@
+// widescreens
+@include mediaXl {
+  #homepage,
+  #gyms,
+  #booking,
+  #login,
+  #signup,
+  #profile,
+  #confirm {
+    .containerr {
+      margin: 3rem;
+      padding: 0 5rem;
+      text-align: start;
+
+      h2 {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  #gyms {
+    .containerr {
+      padding: 2;
+
+      .intro {
+        padding: 1rem 2rem;
+      }
+
+      .form-inline {
+        input {
+          margin: 1.5rem 1.3rem 2rem 1.3rem;
+        }
+      }
+
+      .allGyms {
+        .gym {
+          text-align: center;
+          width: 30% !important;
+
+          p:nth-child(2) {
+            padding-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  #booking {
+    .containerr {
+      .intro-gym {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 2rem;
+
+        .info-gym {
+          width: 45%;
+        }
+
+        .date {
+          width: 45%;
+
+          .react-datepicker-wrapper {
+            margin-right: 2.5rem;
+            display: inline-block;
+            width: 50%;
+
+            input {
+              width: 100%;
+              padding: 0.2rem;
+            }
+          }
+
+          button {
+            display: inline-block;
+          }
+        }
+      }
+
+      .timeslots {
+        .timeslot {
+          width: 30% !important;
+          padding: 1.5rem 2.5rem;
+
+          form {
+            button {
+              display: block;
+              margin: 1rem auto;
+            }
+          }
+
+          .extraBtn {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  #confirm {
+    .containerr {
+      padding: 2rem 5rem;
+      margin: 3rem 10rem 1rem;
+
+      #confirm-info {
+        h5 {
+          text-align: center;
+          padding: 1rem;
+        }
+
+        ul {
+          padding-left: 1.5rem;
+
+          li {
+            padding: 0.5rem 0;
+          }
+        }
+      }
+    }
+  }
+
+  #profile {
+    .containerr {
+      padding: 3rem;
+
+      .userInfo {
+        p {
+          margin-left: 2rem;
+        }
+      }
+
+      h3 {
+        text-align: center;
+      }
+
+      .allBookings {
+        .userBooking {
+          width: 30% !important;
+        }
+      }
+    }
+  }
+
+  #login,
+  #signup {
+    .containerr {
+      text-align: center;
+      form {
+        .form-group {
+          input {
+            width: 40% !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+//desktop & laptops
+@include mediaLg {
+  #gyms {
+    .containerr {
+      .intro {
+        padding: 0 2rem;
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+
+      .form-inline {
+        input {
+          width: 40%;
+        }
+      }
+
+      .allGyms {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        .gym {
+          width: 45%;
+          margin: 1rem;
+          padding: 1.5rem;
+
+          h3 {
+            height: 30%;
+          }
+        }
+      }
+    }
+  }
+
+  #booking {
+    .containerr {
+      padding: 0;
+
+      .info-gym {
+        margin-bottom: 1rem;
+        p {
+          margin-bottom: 0;
+        }
+      }
+
+      .react-datepicker-wrapper {
+        input {
+          width: 40%;
+          padding: 0.2rem;
+        }
+      }
+
+      .timeslots {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        .timeslot {
+          margin: 0.5rem;
+          width: 45%;
+          align-self: flex-start;
+        }
+      }
+    }
+  }
+
+  #confirm {
+    .containerr {
+      #confirm-booking {
+        padding: 1rem 2rem;
+      }
+
+      #confirm-info {
+        padding: 1rem 1.5rem;
+
+        h5 {
+          font-size: 1.65rem;
+        }
+      }
+    }
+  }
+
+  #profile {
+    .containerr {
+      padding: 0;
+
+      .userInfo {
+        p {
+          margin-left: 4rem;
+        }
+      }
+
+      h3 {
+        font-size: 2rem;
+      }
+
+      .allBookings {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        .userBooking {
+          margin: 1rem;
+          width: 45%;
+
+          button {
+            padding: 0.2rem 0.7rem;
+          }
+        }
+      }
+    }
+  }
+
+  #login,
+  #signup {
+    .containerr {
+      .login,
+      .signup {
+        margin-top: 8%;
+      }
+    }
+  }
+}
+
+// tablets and small laptops
+@include mediaMd {
+  #homepage,
+  #gyms,
+  #booking,
+  #login,
+  #signup,
+  #profile,
+  #confirm {
+    .jumbotron {
+      height: 30vh;
+    }
+
+    .containerr {
+      padding: 0 3rem;
+
+      p {
+        line-height: 2rem;
+      }
+    }
+  }
+
+  #gyms {
+    .containerr {
+      .form-inline {
+        input {
+          margin: 1.5rem 1.3rem 1.3rem 1.3rem;
+        }
+      }
+
+      .gym {
+        margin: 2rem;
+        padding: 1.5rem;
+
+        button {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  #booking {
+    .containerr {
+      .timeslot {
+        margin: 2rem 0.5rem;
+        padding: 1.5rem;
+
+        form {
+          input[type="text"] {
+            display: block;
+            margin: 1rem auto;
+          }
+          button {
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  #confirm {
+    .containerr {
+      #confirm-booking {
+        text-align: start;
+      }
+
+      #confirm-info {
+        padding: 1rem 1.5rem;
+
+        h5 {
+          font-size: 1.5rem;
+        }
+
+        ul {
+          text-align: start;
+          padding-left: 0.75rem;
+        }
+      }
+    }
+  }
+
+  #profile {
+    .containerr {
+      .userInfo {
+        p {
+          margin-left: 2rem;
+        }
+      }
+
+      h3 {
+        margin: 1.5rem;
+      }
+
+      .userBooking {
+        margin: 2rem;
+        padding: 1.5rem 2rem;
+
+        button {
+          padding: 0 0.65rem;
+        }
+      }
+    }
+  }
+
+  #login,
+  #signup {
+    .containerr {
+      form {
+        margin-bottom: 3.5rem;
+
+        .form-group {
+          margin-bottom: 2rem;
+          input {
+            width: 60%;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}

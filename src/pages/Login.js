@@ -38,7 +38,7 @@ export default function Login() {
         <h1>Login</h1>
       </Jumbotron>
 
-      <Container>
+      <div className="containerr">
         <Form>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
@@ -72,7 +72,7 @@ export default function Login() {
           <h5>No account, yet?</h5>
           <Link to="/signup">Click here to sign up</Link>
         </div>
-      </Container>
+      </div>
     </div>
   );
 }
