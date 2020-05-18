@@ -12,14 +12,13 @@ import addDays from "date-fns/addDays";
 import "react-datepicker/dist/react-datepicker.css";
 
 import Jumbotron from "react-bootstrap/Jumbotron";
-import Container from "react-bootstrap/Container";
 
 export default function Booking() {
   const { id } = useParams();
   // console.log("what is id?", id);
   const dispatch = useDispatch();
   const gymDetails = useSelector(selectGym);
-  console.log("details?", gymDetails);
+  // console.log("details?", gymDetails);
 
   useEffect(() => {
     dispatch(fetchGymById(id));

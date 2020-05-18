@@ -32,7 +32,7 @@ export const fetchBookings = (userId) => {
   return async (dispatch) => {
     try {
       const response = await axios.get(`${apiUrl}/bookings/${userId}`);
-      console.log("RESPONSE", response);
+      // console.log("RESPONSE", response);
 
       dispatch(fetchBookingsSuccess(response.data));
     } catch (error) {

@@ -5,15 +5,14 @@ import { useParams } from "react-router-dom";
 import { selectUser } from "../store/user/selectors";
 import { getUserWithStoredToken } from "../store/user/actions";
 
-import Container from "react-bootstrap/Container";
 import { Jumbotron } from "react-bootstrap";
 
 export default function Confirm() {
   const user = useSelector(selectUser);
-  console.log("user", user);
+  // console.log("user", user);
   const { id, bookingId } = useParams();
-  console.log("what is id?", id);
-  console.log("what is bookingId?", bookingId);
+  // console.log("what is id?", id);
+  // console.log("what is bookingId?", bookingId);
   const dispatch = useDispatch();
 
   useEffect(() => {

@@ -8,7 +8,6 @@ import { fetchBookings } from "../store/bookings/actions";
 import { selectBookings } from "../store/bookings/selectors";
 
 import Jumbotron from "react-bootstrap/Jumbotron";
-import Container from "react-bootstrap/Container";
 
 export default function Profile() {
   const user = useSelector(selectUser);
@@ -27,7 +26,7 @@ export default function Profile() {
     return <Loading />;
   }
 
-  const sortedDates = bookings.sort((a, b) => {
+  bookings.sort((a, b) => {
     return (
       new Date(a.pickedDate.substring(4, 15)) -
       new Date(b.pickedDate.substring(4, 15))
@@ -35,7 +34,7 @@ export default function Profile() {
   });
 
   function onDelete(id) {
-    console.log("deleting", id);
+    // console.log("deleting", id);
     dispatch(deleteBooking(id));
   }
 

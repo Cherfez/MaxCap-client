@@ -6,10 +6,8 @@ import { useHistory, Link } from "react-router-dom";
 import { signUp } from "../store/user/actions";
 
 import Form from "react-bootstrap/Form";
-import Container from "react-bootstrap/Container";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Button from "react-bootstrap/Button";
-import { Col } from "react-bootstrap";
 
 export default function SignUp() {
   const [name, setName] = useState("");
