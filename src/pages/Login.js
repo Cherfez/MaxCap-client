@@ -6,7 +6,6 @@ import { login } from "../store/user/actions";
 import { selectToken } from "../store/user/selectors";
 
 import Form from "react-bootstrap/Form";
-import Container from "react-bootstrap/Container";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Button from "react-bootstrap/Button";
 

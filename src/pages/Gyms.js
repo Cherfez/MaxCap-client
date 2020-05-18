@@ -7,7 +7,6 @@ import { fetchGyms } from "../store/gym/actions";
 import Loading from "../components/Loading";
 
 import Jumbotron from "react-bootstrap/Jumbotron";
-import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 

@@ -14,7 +14,6 @@ import Confirm from "./pages/Confirm";
 import Navigation from "./components/Navigation/index";
 import MessageBox from "./components/MessageBox";
 
-// import "./styling/mobile.css";
 import "../src/styling/css/main.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -33,7 +32,6 @@ function App() {
         <Route exact path="/" component={Homepage} />
         <Route exact path="/gyms" component={Gyms} />
         <Route exact path="/gyms/:id/booking" component={Booking} />
-        {/* <Route path="/booking/:id" component={Booking} /> */}
         <Route path="/gyms/:id/booking/:bookingId" component={Confirm} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
