@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import Gym from "../components/Gym/index";
 import { selectGyms } from "../store/gym/selectors";
@@ -42,12 +42,10 @@ export default function Gyms() {
       <div className="containerr">
         <div className="intro">
           <p>
-            Prism la croix tote bag, chartreuse normcore lomo umami. Artisan
-            cardigan migas, austin 90's cronut stumptown vape tilde tousled
-            forage meggings. Tote bag banh mi sriracha mlkshk health goth,
-            subway tile letterpress fingerstache green juice 90's kickstarter
-            tbh. Wayfarers authentic fam helvetica waistcoat VHS disrupt PBR&B
-            glossier sartorial bushwick.
+            Underneat you will find all the climbing gyms that work with MaxCap
+            as their primary booking system. <br />
+            To check availability and book a session please select a climbing
+            gym. To filter gyms out you can use the search bar below.
           </p>
         </div>
 

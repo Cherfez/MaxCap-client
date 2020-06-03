@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchGyms } from "../store/gym/actions";
 import { Link } from "react-router-dom";
 
 import Jumbotron from "react-bootstrap/Jumbotron";
 
 export default function Homepage() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchGyms());
+  }, [dispatch]);
+
   return (
     <div id="homepage">
       <Jumbotron fluid>
@@ -12,15 +19,13 @@ export default function Homepage() {
       <div className="containerr">
         <h2>Welcome climber!</h2>
         <p>
-          Prism la croix tote bag, chartreuse normcore lomo umami. Artisan
-          cardigan migas, austin 90's cronut stumptown vape tilde tousled forage
-          meggings. Tote bag banh mi sriracha mlkshk health goth, subway tile
-          letterpress fingerstache green juice 90's kickstarter tbh. Wayfarers
-          authentic fam helvetica waistcoat VHS disrupt PBR&B glossier sartorial
-          bushwick. Coloring book truffaut photo booth, kickstarter air plant
-          single-origin coffee aesthetic cray meh four loko. Squid messenger bag
-          ugh skateboard roof party. Bitters tacos gochujang migas kickstarter
-          bushwick. Tofu kale chips activated charcoal pork belly.{" "}
+          MaxCap will help you to book a climbing session at your favorite
+          climbing gym. We will also help you keep track of your bookings, so
+          you will never miss another session. <br />
+          If you're ready to make a booking, or just to browse gyms, click the
+          button below to see the gyms we are working with. <br />
+          <br />
+          Happy climbing and stay safe!
         </p>
         <Link to="/gyms">
           <button>Search your gym!</button>
