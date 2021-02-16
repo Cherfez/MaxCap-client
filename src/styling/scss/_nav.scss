@@ -1,0 +1,74 @@
+// styling for the nav on differect screen sizes
+.navbar {
+  .navbar-collapse {
+    a {
+      text-decoration: underline;
+      text-align: center;
+      color: #fff;
+
+      &:visited {
+        color: #fff;
+      }
+    }
+
+    p {
+      text-align: center;
+      color: #fff;
+    }
+
+    .buttonGroup {
+      display: flex;
+      justify-content: space-around;
+
+      button {
+        background-color: rgba(255, 255, 255, 0.377);
+        color: rgba(255, 255, 255, 0.808);
+        border-color: rgba(255, 255, 255, 0.158);
+      }
+
+      .logout {
+        background-color: rgba(236, 132, 132, 0.63);
+        color: rgba(255, 255, 255, 0.808);
+      }
+    }
+
+    .login {
+      background-color: rgba(132, 236, 179, 0.63);
+      color: rgba(255, 255, 255, 0.808);
+      border-color: rgba(255, 255, 255, 0.158);
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+@include mediaMd {
+  .navbar {
+    .navbar-collapse {
+      padding: 0.5rem;
+
+      p,
+      a {
+        padding: 0.5rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@include mediaSm {
+  .navbar {
+    .navbar-collapse {
+      a {
+        padding: 0.75rem;
+      }
+
+      .buttonGroup {
+        button {
+          width: 20%;
+          margin: 0.5rem;
+        }
+      }
+    }
+  }
+}
